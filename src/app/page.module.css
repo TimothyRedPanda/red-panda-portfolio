@@ -5,12 +5,19 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  user-select: none;
 }
 
 .mainText {
   font-size: 2rem;
+  border-radius: 5px;
+  padding: 1rem;
 }
 
 .panda {
   color: #ff7139;
+  border: #ff7139 2px solid;
+  padding: 0.5rem;
+  border-radius: 5px;
+  z-index: 1;
 }
