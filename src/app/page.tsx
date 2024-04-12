@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <section>
-        <p>
+        <p className={styles.mainText}>
           Ain't no party like a Red Panda Party!
         </p>
       </section>
