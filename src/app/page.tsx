@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import Link from 'next/link';
 export default function Home() {
   return (
@@ -10,16 +10,16 @@ export default function Home() {
         <br/>
         <span className={styles.linkContainer}>
            <span>
-          <Link href={"/html"}>HTML</Link>
+          <Link className={styles.link} href={"/html"}>HTML</Link>
           </span>
            <span>
-          <Link href={"/css"}>CSS</Link>
+          <Link className={styles.link} href={"/css"}>CSS</Link>
           </span>
            <span>
-          <Link href={"/javascript"}>Javascript</Link>
+          <Link className={styles.link} href={"/javascript"}>Javascript</Link>
           </span>
            <span>
-          <Link href={"/typescript"}>Typescript</Link>
+          <Link className={styles.link} href={"/typescript"}>Typescript</Link>
           </span>
         </span>
       </section>

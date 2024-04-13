@@ -17,11 +17,12 @@
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
+  color: #080303;
 }
 
 .panda {
-  color: #ff7139;
-  border: #ff7139 2px solid;
+  color: #C14D4B;
+  border: #C14D4B 2px solid;
   padding: 0.5rem;
   border-radius: 5px;
   z-index: 1;
@@ -35,4 +36,16 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  opacity: 0.8;
+  color: #080303;
+  transition: 0.35s all ease-in-out;
+}
+
+.link:hover {
+  opacity: 1;
+  color: #C14D4B;
 }

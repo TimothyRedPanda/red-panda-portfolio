@@ -4,7 +4,7 @@ export default function Typescript() {
     return (
         <div className={styles.container}>
             <h1>CSS</h1>
-            <Link href="/">Back Home</Link>
+            <Link className={styles.link} href="/">Back Home</Link>
         </div>
     );
 }
