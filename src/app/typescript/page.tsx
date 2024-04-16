@@ -2,7 +2,7 @@ import styles from "./page.module.scss"
 import PrismLoader from "@/components/prism-loader"
 import Link from 'next/link'
 export default function Typescript() {
-    const objectType = `type animal : {name: string, age: number, isCool : boolean};`
+    const objectType = `type animal = {name: string, age: number, isCool : boolean};`
     const exampleObject =`let panda : animal = {name: "panda", age: 3, isCool : true};`
     const paraTypes = 'function sum(x : number, y : number) : number {};'
     return (
