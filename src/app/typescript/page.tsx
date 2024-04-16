@@ -51,7 +51,6 @@ export default function Typescript() {
                 let age : (string | number) = "34" or 34;
                 </code>
             </pre>
-            <Link className={styles.link} href="/">Back Home</Link>
             <PrismLoader/>
         </div>
     );

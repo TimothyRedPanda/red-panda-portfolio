@@ -1,55 +1,11 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem;
+.container {
   max-width: 100vw;
   max-height: 100vh;
-  user-select: none;
-}
-
-.mainText {
-  font-size: 2rem;
-  border-radius: 5px;
+  margin: 10%;
   display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  color: #080303;
-}
-
-.panda {
-  color: #C14D4B;
-  border: #C14D4B 2px solid;
-  padding: 0.5rem;
-  border-radius: 5px;
-  z-index: 1;
-}
-
-.linkContainer {
-  display: flex;
-  flex-flow: column;
-  width: 100%;
-  text-align: center;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.link {
-  text-decoration: none;
-  opacity: 0.8;
-  color: #080303;
-  transition: 0.35s all ease-in-out;
-}
-
-.link:hover {
-  opacity: 1;
-  color: #C14D4B;
-}
-
-.logo {
-  width: 300px;
+  overflow: hidden;
 }
