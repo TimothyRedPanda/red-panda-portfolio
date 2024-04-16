@@ -1,12 +1,12 @@
 import styles from "./page.module.scss";
 import Link from 'next/link';
+import RedPandaLogo from "@/components/red-panda-logo";
 export default function Home() {
   return (
     <main className={styles.main}>
       <section className={styles.section}>
-        <p className={styles.mainText}>
-          Red <span className={styles.panda}>Panda</span> Studio
-        </p>
+       <RedPandaLogo className={styles.logo}/>
+          <br/>
         <br/>
         <span className={styles.linkContainer}>
            <span>
