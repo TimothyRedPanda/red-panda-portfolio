@@ -29,7 +29,7 @@ export default function Typescript() {
                 </code>
                 <br/>
                 <code className="language-ts">
-                    let animals : [string, number, boolean] = ["Panda", 3, true]
+                    let animals : [string, number, boolean] = ["Panda", 3, true];
                 </code>
                 <br/>
                 <br/>
