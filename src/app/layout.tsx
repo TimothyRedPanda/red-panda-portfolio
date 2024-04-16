@@ -25,7 +25,7 @@ export default function RootLayout({
       <Link className={styles.link} href="/css">CSS</Link>
           <Link className={styles.link} href="/typescript">Typescript</Link>
       </nav>
-      {children}
+          {children}
       </body>
       </html>
   );
