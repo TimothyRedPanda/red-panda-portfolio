@@ -8,7 +8,7 @@ export default function Typescript() {
     return (
         <div className={styles.container}>
             <h1>Typescript</h1>
-            <pre className="language-ts">
+            <pre className="language-ts" style={{width: "80vw"}}>
                 <code className="language-ts">
                     let age : number = 3;
                 </code>
