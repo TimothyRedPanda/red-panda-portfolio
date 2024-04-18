@@ -1,3 +1,10 @@
 .code {
  margin: 0.2rem;
+ font-size: 1.5rem;
+}
+
+@media screen and (max-width: 850px) {
+.code {
+ font-size: 0.9rem;
+}
 }
