@@ -1,36 +1,32 @@
 .textBox, .textBox2 {
-  width: 50%;
+  width: 300px;
   height: fit-content;
   color: #FDF9F9;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 3rem;
-}
+  text-align: left;
 
-.speechBubble, .speechBubble2 {
-  display: flex;
-  flex-flow: column nowrap;
-  height: 200px;
-}
-
-.speechBubble {;
-justify-content: flex-start;
-}
-.speechBubble2 {
-  justify-content: flex-end;
 }
 
 .textBox {
-  background-color:#53d769;
   align-self: flex-start;
+  background: #F7941D;
 }
-
 .textBox2 {
-  background-color:#5fc9f8;
   align-self: flex-end;
+  background: #1D80F7;
 }
 
 .textContainer {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  gap: 1rem;
+  flex-flow: column nowrap;
+  width: 50%;
 }
+
+@media screen and (max-width: 850px) {
+  .textBox, .textBox2 {
+    padding: 1rem;
+  }
+}
+

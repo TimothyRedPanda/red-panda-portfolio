@@ -1,4 +1,12 @@
 @import url("https://use.typekit.net/ovx4oiu.css");
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     background: #FDF9F9 none repeat;
     font-size: 1.5rem;
@@ -15,7 +23,7 @@ body {
 
 .main-nav {
     position: sticky;
-    top: 0.5rem;
+    top: 0;
     background: #FDF9F9;
     width: 100vw;
     font-size: 1.5rem;
@@ -32,5 +40,6 @@ body {
     .main-nav {
         flex-flow: column nowrap;
         gap: 0.5rem;
+        width: 100vw;
     }
 }
