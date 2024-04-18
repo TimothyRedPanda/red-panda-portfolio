@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import Link from "next/link";
-import styles from "@/app/typescript/page.module.scss";
 import RedPandaLogo from "@/components/red-panda-logo";
+import CustomLink from "@/components/link/Link";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Red Panda Studio",
@@ -19,11 +19,11 @@ export default function RootLayout({
       <body>
       <nav className="main-nav">
         <RedPandaLogo className="red-panda-logo"/>
-      <Link className={styles.link} href="/">Home</Link>
-      <Link className={styles.link} href="/javascript">Javascript</Link>
-      <Link className={styles.link} href="/html">HTML</Link>
-      <Link className={styles.link} href="/css">CSS</Link>
-          <Link className={styles.link} href="/typescript">Typescript</Link>
+          <CustomLink href="/" text="Home"/>
+          <CustomLink href="/html" text="HTML"/>
+          <CustomLink href="/css" text="CSS"/>
+          <CustomLink href="/javascript" text="javascript"/>
+          <CustomLink href="/typescript" text="typescript"/>
       </nav>
           {children}
       </body>

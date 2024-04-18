@@ -14,6 +14,9 @@ body {
 }
 
 .main-nav {
+    position: sticky;
+    top: 0.5rem;
+    background: #FDF9F9;
     width: 100vw;
     font-size: 1.5rem;
     display: flex;
@@ -23,6 +26,9 @@ body {
 }
 
 @media screen and (max-width: 850px) {
+    body {
+        font-size: 1rem;
+    }
     .main-nav {
         flex-flow: column nowrap;
         gap: 0.5rem;
