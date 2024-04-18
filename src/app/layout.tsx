@@ -20,9 +20,6 @@ export default function RootLayout({
       <nav className="main-nav">
         <RedPandaLogo className="red-panda-logo"/>
           <CustomLink href="/" text="Home"/>
-          <CustomLink href="/html" text="HTML"/>
-          <CustomLink href="/css" text="CSS"/>
-          <CustomLink href="/javascript" text="javascript"/>
           <CustomLink href="/typescript" text="typescript"/>
       </nav>
           {children}
