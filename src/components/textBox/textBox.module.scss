@@ -2,8 +2,8 @@
   width: 300px;
   height: fit-content;
   color: #FDF9F9;
-  padding: 2rem;
-  border-radius: 3rem;
+  padding: 1rem;
+  border-radius: 1rem;
   text-align: left;
 
 }
@@ -21,12 +21,6 @@
   display: flex;
   gap: 1rem;
   flex-flow: column nowrap;
-  width: 60%;
-}
-
-@media screen and (max-width: 850px) {
-  .textBox, .textBox2 {
-    padding: 1rem;
-  }
+  width: 100%;
 }
 

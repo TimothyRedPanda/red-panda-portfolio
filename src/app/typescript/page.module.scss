@@ -6,3 +6,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.imessage {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-flow: column nowrap;
+}
