@@ -21,6 +21,7 @@ export default function RootLayout({
         <RedPandaLogo className="red-panda-logo"/>
           <CustomLink href="/" text="Home"/>
           <CustomLink href="/typescript" text="typescript"/>
+          <CustomLink href="/types" text="types"/>
       </nav>
           {children}
       </body>

@@ -2,7 +2,6 @@ import styles from "./page.module.scss"
 import CodeSnippet from "@/components/codeSnippet/codeSnippet";
 import TextBox from "@/components/textBox/textBox"
 import PrismLoader from "@/components/prism-loader";
-import TimeStamp from "@/components/timeStamp/timeStamp";
 const compileText =
     `/* Example tsconfig.json contents */
 {
