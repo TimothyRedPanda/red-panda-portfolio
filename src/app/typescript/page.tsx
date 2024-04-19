@@ -74,7 +74,7 @@ export default function Typescript() {
                          timeStamp="Red Panda"
                 />
                 <CodeSnippet code='"build" : "tsc"'/>
-                <CodeSnippet code="npm build tsc"/>
+                <CodeSnippet code="npm run build"/>
             </section>
             <section className={styles.imessage}>
                 <TextBox text="Thanks so much for this! ❤️"
