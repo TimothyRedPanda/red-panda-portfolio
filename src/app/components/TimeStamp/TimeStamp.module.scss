@@ -1,23 +1,26 @@
-.user {
-  display: flex;
-  color: #f0f0f0;
-  height: fit-content;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 0.8rem;
+.user
+{
+  align-items     : center;
+  color           : #F0F0F0;
+  display         : flex;
+  font-size       : 0.8rem;
+  height          : fit-content;
+  justify-content : flex-end;
 }
 
-.indicator {
-  filter: brightness(1);
-  box-shadow: 0 0 10px #adfc66;
-  width: 0.5rem;
-  margin:0 0.2rem 0 0.2rem;
-  background-color: #adfc66;
-  height: 0.5rem;
-  border-radius: 100%;
+.indicator
+{
+  background-color : #ADFC66;
+  border-radius    : 100%;
+  box-shadow       : 0 0 10px #ADFC66;
+  filter           : brightness(1);
+  height           : 0.5rem;
+  margin           : 0 0.2rem 0 0.2rem;
+  width            : 0.5rem;
 }
 
-.timeStamp {
-  width: 100%;
-  margin-top: 1rem;
+.timeStamp
+{
+  margin-top : 1rem;
+  width      : 100%;
 }

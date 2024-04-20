@@ -1,0 +1,76 @@
+@import url('https://use.typekit.net/ovx4oiu.css');
+
+*,
+*::before,
+*::after
+{
+  box-sizing : border-box;
+  margin     : 0;
+  padding    : 0;
+}
+
+body
+{
+  font-family : 'quicksand', sans-serif;
+  font-size   : 20px;
+  font-style  : normal;
+  font-weight : 400;
+  overflow-x  : hidden;
+}
+
+.navBar
+{
+  align-items      : center;
+  background-color : #F9F9F9;
+  box-shadow       : 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  display          : flex;
+  height           : 100px;
+  justify-content  : center;
+  left             : 0;
+  position         : sticky;
+  top              : 0;
+  width            : 100vw;
+  z-index          : 2;
+}
+
+.footer
+{
+  height : 100px;
+  width  : 100vw;
+}
+
+.link
+{
+  color           : #1D80F7;
+  text-decoration : none;
+  transition      : all 0.35s ease-in-out;
+}
+
+.link:hover
+{
+
+  color : #F7941D;
+}
+
+/* This is for the scrollbar track */
+::-webkit-scrollbar
+{
+  height : 0.5rem;
+  width  : 0.5rem;
+}
+
+/* This is for the thumb (the moving part) */
+::-webkit-scrollbar-thumb
+{
+  background    : #555;
+  border-radius : 2px;
+  opacity       : 0.8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+{
+  background : #1D80F7;
+}
+
+
