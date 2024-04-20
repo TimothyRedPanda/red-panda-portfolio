@@ -1,7 +1,7 @@
 import * as React from "react"
 import { SVGProps } from "react"
 const RedPandaLogo = (props: SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770.53 98.49" {...props} className={props.className}>
+    <svg style={{height:"48px", margin:"1rem"}} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770.53 98.49" {...props} className={props.className}>
         <defs>
             <style>
                 {".cls-1,.cls-2{fill:#231f20;stroke-width:0}.cls-2{fill:#f7941d}"}
