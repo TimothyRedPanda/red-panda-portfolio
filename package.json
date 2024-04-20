@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@vercel/kv": "^1.0.1",
@@ -22,6 +23,7 @@
     "@types/prismjs": "^1.26.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "husky": "^9.0.11",
     "typescript": "^5"
   }
 }
