@@ -5,7 +5,7 @@ export default function Typescript() {
 	return (
 		<main className={styles.main}>
 			<SpeechBubble
-				user="Platapus"
+				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
 				message="Oooo new page! So where do we go from here?"
@@ -31,7 +31,7 @@ export default function Typescript() {
 				codeStyle="language-javascript"
 			/>
 			<SpeechBubble
-				user="Platapus"
+				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
 				message="Is there a way to install Typescript globally?"
@@ -45,7 +45,7 @@ export default function Typescript() {
 				codeStyle="language-javascript"
 			/>
 			<SpeechBubble
-				user="Platapus"
+				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
 				message="Ahh that makes sense, do I need to do anything else?"
@@ -54,7 +54,7 @@ export default function Typescript() {
 				user="Red Panda"
 				align="flex-end"
 				message="Well you can't just using Typescript in the browser,
-			sorry about that. It is important to compile it to Javascript."
+		sorry about that. It is important to compile it to Javascript."
 			/>
 			<SpeechBubble
 				user="Red Panda"
@@ -73,7 +73,7 @@ export default function Typescript() {
 				the tsconfig.json defaults"
 			/>
 			<SpeechBubble
-				user="Platapus"
+				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
 				message="What about linking it to my HTML and if I want to change the defaults

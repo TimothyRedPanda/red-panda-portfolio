@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<SpeechBubble
-				user="Platapus"
+				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
 				message="Hey Panda, how do I get a Typescript file to work in my HTML project?"
@@ -13,11 +13,11 @@ export default function Home() {
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="Platapus! Long time no see!
+				message="Platypus! Long time no see!
                   I am assuming you have a index.html and styles.css?"
 			/>
 			<SpeechBubble
-				user="Platapus"
+				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
 				message="Yeah I've got those two, but just wondering where
