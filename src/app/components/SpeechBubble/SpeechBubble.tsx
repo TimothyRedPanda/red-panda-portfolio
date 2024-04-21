@@ -19,7 +19,6 @@ function SpeechBubble(props: {
 }) {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true });
-	const { scrollYProgress } = useScroll();
 	return (
 		<motion.div
 			ref={ref}
