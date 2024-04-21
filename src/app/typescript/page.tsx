@@ -13,8 +13,7 @@ export default function Typescript() {
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="Think it might be a good idea to install Typescript. But you
-				also need a tsconfig.json"
+				message="Think it might be a good idea to install Typescript. But you also need a tsconfig.json"
 			/>
 			<SpeechBubble
 				user="Red Panda"
@@ -53,45 +52,39 @@ export default function Typescript() {
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="Well you can't just using Typescript in the browser,
-sorry about that. It is important to compile it to Javascript."
+				message="Well you can't just using Typescript in the browser, sorry about that. It is important to compile it to Javascript."
 			/>
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="The easiest way to compile it is to use this command.
-				If you have called your ts file something different from index
-				then use that name."
+				message="The easiest way to compile it is to use this command. If you have called your ts file something different from index then use that name."
 				codeStyle="language-javascript"
 				code="tsc index.ts"
 			/>
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="Now if you have followed the steps, Typescript should
-				have compile the ts file into a nice index.js file for you based on
-				the tsconfig.json defaults"
+				message="Now if you have followed the steps, Typescript should have compile the ts file into a nice index.js file for you based on the tsconfig.json defaults"
 			/>
 			<SpeechBubble
 				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
-				message="What about linking it to my HTML and if I want to change the defaults
-				in the config?"
+				message="What about linking it to my HTML and if I want to change the defaults in the config?"
 			/>
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="To link it to your HTML we just need to do what you would normally
-				do with a JS file."
+				message="To link it to your HTML we just need to do what you would normally do with a JS file."
 				code='<script src="./index.js"></script>'
 				codeStyle="language-html"
 			/>
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
-				message="I'll go through with you the tsconfig.json another time...also
-we need to start learning about types! So look forward to that!"
+				message="I'll go through with you the tsconfig.json another time...for now head over to"
+				linkColor="#1D80F7"
+				types="Types"
 			/>
 		</main>
 	);

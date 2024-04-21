@@ -20,16 +20,14 @@ export default function Home() {
 				user="Platypus"
 				bgColor="#1D80F7"
 				align="flex-start"
-				message="Yeah I've got those two, but just wondering where
-              to go from here?"
+				message="Yeah I've got those two, but just wondering where to go from here?"
 			/>
 			<SpeechBubble
 				user="Red Panda"
 				align="flex-end"
 				typescript="Typescript"
 				linkColor="#1D80F7"
-				message="First you need to initialise npm in your project then
-              we can get sorted with "
+				message="First you need to initialise npm in your project then we can get sorted with "
 				code="npm init"
 				codeStyle="language-javascript"
 			/>

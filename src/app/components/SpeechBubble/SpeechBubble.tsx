@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 import CodeSnippet from "../CodeSnippet/CodeSnippet";
@@ -13,6 +13,7 @@ function SpeechBubble(props: {
 	user: string;
 	home?: string;
 	typescript?: string;
+	types?: string;
 	linkColor?: string;
 	code?: string;
 	codeStyle?: string;
@@ -49,6 +50,13 @@ function SpeechBubble(props: {
 				href="/typescript/"
 			>
 				{props.typescript}
+			</Link>
+			<Link
+				style={{ color: props.linkColor || "#fff" }}
+				className={styles.link}
+				href="/types/"
+			>
+				{props.types}
 			</Link>
 			<br />
 			{props.code && (
