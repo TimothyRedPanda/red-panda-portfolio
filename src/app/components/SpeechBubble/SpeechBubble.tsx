@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useInView, useScroll } from "framer-motion";
 import Link from "next/link";
+import { useRef } from "react";
 import CodeSnippet from "../CodeSnippet/CodeSnippet";
 import TimeStamp from "../TimeStamp/TimeStamp";
 import styles from "./SpeechBubble.module.scss";
@@ -16,8 +17,19 @@ function SpeechBubble(props: {
 	code?: string;
 	codeStyle?: string;
 }) {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true });
+	const { scrollYProgress } = useScroll();
 	return (
 		<motion.div
+			ref={ref}
+			variants={{
+				hidden: { opacity: 0, x: 75 },
+				visible: { opacity: 1, x: 0 },
+			}}
+			initial="hidden"
+			animate={isInView ? "visible" : "hidden"}
+			transition={{ duration: 0.5 }}
 			className={styles.speechBubble}
 			style={{
 				backgroundColor: props.bgColor || "#F7941D",

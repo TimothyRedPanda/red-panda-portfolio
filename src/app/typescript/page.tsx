@@ -54,7 +54,7 @@ export default function Typescript() {
 				user="Red Panda"
 				align="flex-end"
 				message="Well you can't just using Typescript in the browser,
-		sorry about that. It is important to compile it to Javascript."
+sorry about that. It is important to compile it to Javascript."
 			/>
 			<SpeechBubble
 				user="Red Panda"
