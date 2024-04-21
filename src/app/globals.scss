@@ -15,7 +15,6 @@ body
   font-size   : 20px;
   font-style  : normal;
   font-weight : 400;
-  overflow-x  : hidden;
 }
 
 .navBar
@@ -24,6 +23,7 @@ body
   background-color : #F9F9F9;
   box-shadow       : 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   display          : flex;
+  height           : 100px;
   justify-content  : center;
   left             : 0;
   position         : sticky;
