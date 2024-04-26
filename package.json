@@ -11,15 +11,17 @@
   },
   "dependencies": {
     "@vercel/kv": "^1.0.1",
+    "ace-builds": "^1.33.1",
     "framer-motion": "^11.1.7",
     "next": "14.2.0",
     "prismjs": "^1.29.0",
     "react": "^18",
+    "react-ace": "^11.0.1",
     "react-dom": "^18",
     "sass": "^1.75.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.7.0",
+    "@biomejs/biome": "1.7.1",
     "@types/node": "^20",
     "@types/prismjs": "^1.26.3",
     "@types/react": "^18",

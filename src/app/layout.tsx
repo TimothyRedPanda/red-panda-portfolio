@@ -17,11 +17,12 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<nav className="navBar">
-					<Link href="/">
-						<RedPandaLogo />
+					<RedPandaLogo />
+					<Link className="link" href="/python/">
+						Python
 					</Link>
-					<Link className="link" href="/">
-						Home
+					<Link className="link" href="/typescript/">
+						Typescript
 					</Link>
 				</nav>
 				{children}
