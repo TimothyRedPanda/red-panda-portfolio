@@ -13,7 +13,7 @@
     "@vercel/kv": "^1.0.1",
     "ace-builds": "^1.33.1",
     "framer-motion": "^11.1.7",
-    "next": "14.2.1",
+    "next": "14.2.2",
     "prismjs": "^1.29.0",
     "react": "^18",
     "react-ace": "^11.0.1",
