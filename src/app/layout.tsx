@@ -24,6 +24,9 @@ export default function RootLayout({
 					<Link className="link" href="/typescript/">
 						Typescript
 					</Link>
+					<Link className="link" href="/pandared/">
+						Panda Red UI
+					</Link>
 				</nav>
 				{children}
 				<footer className="footer" />
