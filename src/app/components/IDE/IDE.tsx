@@ -18,7 +18,7 @@ export default function Ide(props: {
 			style={{ borderRadius: "0.5rem" }}
 			onChange={props.code}
 			width={"100%"}
-			height={"100%"}
+			height={"200px"}
 			fontSize={"1.5rem"}
 			lineHeight={"2rem"}
 			enableSnippets={true}

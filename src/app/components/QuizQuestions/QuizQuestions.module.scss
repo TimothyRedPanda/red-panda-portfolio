@@ -1,0 +1,38 @@
+.codeEditor
+{ align-item         : center;
+  display            : grid;
+  gap                : 1rem;
+  grid-template-rows : fit-content(50px) fit-content(300px) fit-content(50px) fit-content(50px);
+  max-width          : 35em;
+  padding            : 1rem;
+  width              : 100%;
+  z-index            : 0;
+}
+
+.question {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column nowrap;
+  height: fit-content;
+  height: 100%;
+}
+
+.button
+{
+  background-color : transparent;
+  border           : none;
+  border-radius    : 3rem;
+  cursor           : pointer;
+  font             : inherit;
+  justify-self     : center;
+  outline          : none;
+  padding          : 0.5rem;
+  height: fit-content;
+  transition       : all 0.35s ease-in-out;
+}
+
+.button:hover
+{
+  background-color : #000;
+  color            : #FFF;
+}

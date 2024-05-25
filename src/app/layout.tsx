@@ -17,7 +17,9 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<nav className="navBar">
-					<RedPandaLogo />
+					<div className="logo">
+						<RedPandaLogo />
+					</div>
 					<Link className="link" href="/python/">
 						Python
 					</Link>
