@@ -1,7 +1,7 @@
 ## RedPandaStudio (Owned by Timothy Bridge)
 ### Constant work in progress—Subject to change.
 ## Visit
-https://red-panda-portfolio.vercel.app/ - to see the final product.
+https://red-panda.studio - to see the final product.
 
 https://www.linkedin.com/in/timothy-bridge-76517328a/ - to connect with me on LinkedIn.
 
