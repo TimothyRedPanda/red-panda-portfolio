@@ -8,7 +8,7 @@ export default function Typescript() {
 			question:
 				"Can you declare a variable called learn and assign it the string python? - I don't mind if you use single or double quotes.",
 			answer: "Correct - learn = \"python\" or learn = 'python'",
-			regexp: /^learn\s*=\s*"python"\s*$/,
+			regexp: /^learn\s*=\s*['"]python['"]\s*$/,
 		},
 		{
 			question:
