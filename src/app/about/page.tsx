@@ -1,7 +1,7 @@
-export default function Home() {
+export default function About() {
     return (
         <main className="p-5 place-content-center grid">
-        <h1> Welcome Home </h1>
+            <h1> About </h1>
         </main>
     );
 }

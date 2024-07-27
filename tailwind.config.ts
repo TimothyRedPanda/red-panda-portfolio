@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        footerShadow: "-8px -8px 60px #c7c7c7",
+        headerShadow: "8px 8px 60px #c7c7c7",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
