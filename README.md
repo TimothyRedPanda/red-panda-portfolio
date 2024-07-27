@@ -33,7 +33,7 @@ Really excited to take this onwards and upwards.
 
 ## Places to visit!
 
-* Deployed version: [https://www.redpanda-studio.com]()
+* Deployed version: [https://www.red-panda-studio.com]()
 
 ## About Me
 Feel free to connect with me on LinkedIn: [https://www.linkedin.com/in/timothybridgecode/]()
