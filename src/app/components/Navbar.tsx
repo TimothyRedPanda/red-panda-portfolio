@@ -13,8 +13,8 @@ export default function Navbar() {
     const aTags = hrefs.map((link, index) => (
         <Link href={link.href}
               className={pathName === link.href ?
-                  "text-blue-400 transition-all ease-in-out"
-                  : "text-blue-50 transition-all ease-in-out"
+                  "text-blue-400 hover:text-blue-200 underline transition-all ease-in-out"
+                  : "text-blue-50 hover:text-blue-200 transition-all ease-in-out"
               } key={index}>
             {link.text}
         </Link>
@@ -25,10 +25,11 @@ export default function Navbar() {
         flex-col
         gap-5
         p-2
-        place-content-center
+        text-center
         bg-gray-700
         text-blue-50
         md:flex-row
+        place-content-center
         shadow-headerShadow
         ">
             {aTags}
