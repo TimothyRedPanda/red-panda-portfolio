@@ -21,7 +21,7 @@ export default function Contact() {
                     <li key={index}>
                         <Link className="hover:text-blue-400" href={item.href} target="_blank">{item.text}</Link>
                     </li>
-                )) : <h2>No list found</h2>}
+                )) : <h2>Coming Soon</h2>}
             </ul>
         </main>
     )
