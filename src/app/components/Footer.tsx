@@ -1,6 +1,7 @@
 export default function Footer() {
-    return (
-        <footer className="flex-row
+	return (
+		<footer
+			className="flex-row
                 h-fit
                 p-2
                 place-content-center
@@ -9,8 +10,9 @@ export default function Footer() {
                 hidden
                 lg:flex
                 shadow-footerShadow
-                ">
-            Thank you for visiting!
-        </footer>
-    )
+                "
+		>
+			Thank you for visiting!
+		</footer>
+	);
 }
