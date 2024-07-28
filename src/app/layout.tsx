@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import React from 'react';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Suspense } from "react";
 import "./globals.scss";
 
 export const metadata: Metadata = {
