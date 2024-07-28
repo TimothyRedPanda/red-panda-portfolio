@@ -1,28 +1,27 @@
-import type {Metadata} from "next";
-import React from 'react';
+import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import "./globals.scss";
+import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Let's learn React!",
-    description: "Helping fellow learners of React.",
+	title: "Let's learn React!",
+	description: "Helping fellow learners of React.",
 };
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
+	children,
+}: Readonly<{
+	children: React.ReactNode;
 }>) {
-    return (
-        <html lang="en">
-        <body>
-        <main className="wrapper overflow-hidden">
-            <Navbar/>
-            {children}
-            <Footer/>
-        </main>
-        </body>
-        </html>
-    );
+	return (
+		<html lang="en">
+			<body className="h-screen grid overflow-hidden">
+				<Navbar />
+				<main className="h-full overflow-x-hidden overflow-y-scroll w-full">
+					{children}
+				</main>
+				<Footer />
+			</body>
+		</html>
+	);
 }

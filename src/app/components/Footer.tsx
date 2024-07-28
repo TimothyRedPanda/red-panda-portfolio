@@ -1,6 +1,7 @@
 export default function Footer() {
     return (
         <footer className="flex-row
+                h-fit
                 p-2
                 place-content-center
                 bg-gray-700

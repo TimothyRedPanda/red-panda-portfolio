@@ -22,7 +22,7 @@ export default function Contact() {
     const contactTitle : string = "Contact"
 
     return (
-        <main className="p-5 justify-items-center align-top h-fit gap-4 grid">
+        <main className="p-6 items-center gap-2 flex flex-col h-full w-full">
             <Title text={contactTitle}/>
             <ul className="flex-col flex gap-4 p-2">
                 {listItems.length > 0 ? listItems.map((item, index) => (

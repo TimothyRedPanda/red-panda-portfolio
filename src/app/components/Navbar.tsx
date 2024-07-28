@@ -22,6 +22,7 @@ export default function Navbar() {
 
     return (
         <nav id="header" className="flex
+        h-fit
         flex-col
         gap-5
         p-2

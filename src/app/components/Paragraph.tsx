@@ -1,7 +1,12 @@
-export default function Paragraph(props: { text: string }) {
+import React from "react";
+export default function Paragraph({
+                                      children,
+                                  }: Readonly<{
+    children: React.ReactNode;
+}>) {
     return (
         <p className="max-w-xl p-2">
-            {props.text}
+            {children}
         </p>
     )
 }
