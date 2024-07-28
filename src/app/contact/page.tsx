@@ -1,7 +1,12 @@
 import Link from 'next/link'
 
+type contactLink = {
+    text: string,
+    href: string
+}[];
+
 export default function Contact() {
-    const listItems = [
+    const listItems: contactLink = [
         {
             text: "LinkedIn: timothybridgecode",
             href: "https://www.linkedin.com/in/timothybridgecode/"
@@ -10,7 +15,7 @@ export default function Contact() {
         {
             text: "GitHub: TimothyRedPanda",
             href: "https://github.com/TimothyRedPanda",
-        }
+        },
     ]
 
     return (
@@ -22,6 +27,7 @@ export default function Contact() {
                         <Link className="hover:text-blue-400" href={item.href} target="_blank">{item.text}</Link>
                     </li>
                 )) : <h2>Coming Soon</h2>}
+                <li>Email : timothy@chewedleashphotography.com</li>
             </ul>
         </main>
     )
