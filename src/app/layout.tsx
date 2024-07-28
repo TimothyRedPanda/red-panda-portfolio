@@ -17,7 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body>
-        <main className="wrapper">
+        <main className="wrapper overflow-hidden">
             <Navbar/>
             {children}
             <Footer/>

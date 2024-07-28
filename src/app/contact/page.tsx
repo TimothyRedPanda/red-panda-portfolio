@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Title from '../components/Title'
 
 type contactLink = {
     text: string,
@@ -18,10 +19,12 @@ export default function Contact() {
         },
     ]
 
+    const contactTitle : string = "Contact"
+
     return (
-        <main className="p-5 place-content-center grid gap-4">
-            <h1 className="underline font-bold"> Contact </h1>
-            <ul className="flex-col flex gap-4">
+        <main className="p-5 justify-items-center align-top h-fit gap-4 grid">
+            <Title text={contactTitle}/>
+            <ul className="flex-col flex gap-4 p-2">
                 {listItems.length > 0 ? listItems.map((item, index) => (
                     <li key={index}>
                         <Link className="hover:text-blue-400" href={item.href} target="_blank">{item.text}</Link>
