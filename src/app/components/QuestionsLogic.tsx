@@ -15,7 +15,8 @@ export default function Questions() {
 				<section
 					className={`flex 
 								flex-col 
-								gap-1 p-4 
+								gap-4 
+								p-3 
 								rounded-xl
 								text-slate-900
 								bg-opacity-50 
