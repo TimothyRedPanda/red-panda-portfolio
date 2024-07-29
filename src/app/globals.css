@@ -16,7 +16,7 @@
 body
 {
   grid-template-rows: auto 1fr auto;
-  font-family: "darkmode-off", sans-serif;
+  font-family: "cartograph-cf", monospace;
   font-weight: 400;
   font-style: normal;
 }
