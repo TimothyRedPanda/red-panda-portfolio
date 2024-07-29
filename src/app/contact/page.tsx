@@ -1,6 +1,5 @@
-import Link from "next/link";
 import Title from "../components/Title";
-import listItems from "../data/contactList";
+import ContactLogic from "../components/ContactLogic";
 
 export default function Contact() {
 	const contactTitle: string = "Contact";
@@ -15,27 +14,7 @@ h-full
 w-full"
 		>
 			<Title text={contactTitle} />
-			<ul className="flex-col flex gap-4 p-2">
-				{listItems.length > 0 ? (
-					listItems.map((item, index) => {
-						const key = index + 1;
-						return (
-							<li key={key}>
-								<Link
-									className="hover:text-blue-400"
-									href={item.href}
-									target="_blank"
-								>
-									{item.text}
-								</Link>
-							</li>
-						);
-					})
-				) : (
-					<h2>Coming Soon</h2>
-				)}
-				<li>Email : timothy@chewedleashphotography.com</li>
-			</ul>
+			<ContactLogic />
 		</main>
 	);
 }
