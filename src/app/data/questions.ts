@@ -5,7 +5,7 @@ const questions: questions_t = [
 		question: "const",
 		answer:
 			"A const or constant can be thought of as a container with a label. You can read the label and have a look at what is in side but you can't change the contents. As you can see in this example I have assigned 'like it's 1999' to the variable party. I can not reassign this constant, we will always party like it's 1999:",
-		example: "const party = 'like it's 1999';",
+		example: 'const party = "like it\'s 1999";',
 	},
 	{
 		question: "let",
