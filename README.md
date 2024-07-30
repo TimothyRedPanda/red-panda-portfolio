@@ -3,6 +3,8 @@
 ```bash
 git clone https://github.com/TimothyRedPanda/red-panda-portfolio
 # then
+cd red-panda-portfolio
+# then
 npm install
 # or
 yarn
