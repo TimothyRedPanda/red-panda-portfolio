@@ -9,8 +9,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			boxShadow: {
-				footerShadow: "-8px -8px 60px #c7c7c7",
-				headerShadow: "8px 8px 60px #c7c7c7",
+				footerShadow: "-2px -2px 75px #000",
+				headerShadow: "2px 2px 75px #000",
 			},
 		},
 	},

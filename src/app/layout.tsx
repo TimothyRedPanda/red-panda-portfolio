@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className="h-screen grid overflow-hidden">
+			<body className="h-screen grid overflow-hidden text-blue-900 bg-slate-50">
 				<Navbar />
 				<main className="h-full overflow-x-hidden overflow-y-scroll w-full">
 					{children}

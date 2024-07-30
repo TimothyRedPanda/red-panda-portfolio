@@ -9,6 +9,7 @@ export default function Footer() {
                 text-blue-50
                 hidden
                 lg:flex
+                shadow-footerShadow
                 "
 		>
 			Thank you for visiting!

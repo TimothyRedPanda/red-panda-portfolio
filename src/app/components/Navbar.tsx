@@ -10,19 +10,22 @@ export default function Navbar() {
 		{ href: "/contact", text: "Contact" },
 	];
 
-	const aTags = hrefs.map((link, index) => (
-		<Link
-			href={link.href}
-			className={
-				pathName === link.href
-					? "text-blue-400 hover:text-blue-200 underline transition-all ease-in-out"
-					: "text-blue-50 hover:text-blue-200 transition-all ease-in-out"
-			}
-			key={index}
-		>
-			{link.text}
-		</Link>
-	));
+	const aTags = hrefs.map((link, index) => {
+		const key = index + 1;
+		return (
+			<Link
+				href={link.href}
+				className={
+					pathName === link.href
+						? "text-blue-400 hover:text-blue-200 underline transition-all ease-in-out"
+						: "text-blue-50 hover:text-blue-200 transition-all ease-in-out"
+				}
+				key={key}
+			>
+				{link.text}
+			</Link>
+		);
+	});
 
 	return (
 		<nav

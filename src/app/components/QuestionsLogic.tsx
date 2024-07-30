@@ -15,17 +15,17 @@ export default function Questions() {
 				<section
 					className={`flex 
 								flex-col 
-								gap-4 
+								gap-1
 								p-3 
 								rounded-xl
-								text-slate-900
+								text-blue-950
 								bg-opacity-50 
 								max-w-lg 
 								${alternateClass(index)}`}
 					key={key}
 				>
 					<h2 className="text-center underline font-bold">{item.question}</h2>
-					<p>{item.answer}</p>
+					<p className="text-blue-900">{item.answer}</p>
 				</section>
 			);
 		})
