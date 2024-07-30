@@ -12,7 +12,7 @@ const questions: questions_t = [
 		answer:
 			"A let on the other hand can be reassigned, we are not locked into the value we assigned it at declaration. As you can see from this example, I am declaring the variable name and then assigning it later on in the code. This would not work with a constant. In the second example I am declaring and assigning the variable problem but I am still able to reassign it later on. Both examples are a valid use of the let key word:",
 		example:
-			'let name;\nname = "Red Panda";\n\nlet problem = "It\'s me";\nproblem = "I\'m the problem, it\'s me...";',
+			'let name;\nname = "Red Panda";\n\nlet problem = "It\'s me";\nproblem = "I\'m the...";',
 	},
 	{
 		question: "Types of...well, data types",

@@ -6,9 +6,7 @@ const RedPandaLogo = () => (
 	>
 		<title>Red Panda Logo</title>
 		<defs>
-			<style>
-				{".cls-1,.cls-2{fill:#231f20;stroke-width:0}.cls-2{fill:#f7941d}"}
-			</style>
+			<style>{".cls-1,.cls-2{fill:#231f20;}.cls-2,.cls-3{fill:#f7941d}"}</style>
 		</defs>
 		<g id="Layer_1" data-name="Layer 1">
 			<path
@@ -27,7 +25,7 @@ const RedPandaLogo = () => (
 		<path
 			id="Layer_2"
 			d="M717.89 35.24c-3.04 0-5.76-2.56-5.76-5.68 0-3.28 2.72-5.68 5.84-5.68s5.76 2.4 5.76 5.68-2.56 5.68-5.84 5.68Z"
-			className="cls-2"
+			className="cls-3"
 			data-name="Layer 2"
 		/>
 	</svg>

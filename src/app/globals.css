@@ -13,7 +13,7 @@
 }
 
 body {
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   gap: 1rem;
   font-family: "work-sans", sans-serif;
   font-weight: 400;
@@ -22,6 +22,22 @@ body {
 
 .code {
   font-family: "code-saver", sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   font-style: normal;
+}
+
+.logo > * > *,
+.logo > * > * > * {
+  transform: translateY(0);
+  transition: all 0.35s ease-in-out;
+}
+
+.logo:hover > * > * > .cls-1,
+.logo:hover > * > .cls-3 {
+  filter: opacity(0.4);
+  fill: #f7941d;
+}
+
+.logo:hover > * > * > .cls-2 {
+  fill: #231f20;
 }
