@@ -1,4 +1,5 @@
 import questions from "../data/questions";
+import PrismLoader from "./PrismLoader";
 
 export default function Questions() {
 	const alternateClass = (index: number) =>
@@ -21,8 +22,9 @@ export default function Questions() {
 					</h2>
 					<p>{item.answer}</p>
 					<pre className="code text-left m-4 self-center bg-slate-900 text-slate-50 p-3 w-fit rounded-md">
-						{item.example}
+						<code className="language-js">{item.example}</code>
 					</pre>
+					<PrismLoader />
 				</section>
 			);
 		})
