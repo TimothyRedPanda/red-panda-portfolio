@@ -19,7 +19,7 @@ export default function About() {
 			<Title text={aboutTitle} />
 			<Paragraph>
 				{paraText}
-				<Link className="hover:text-blue-400 underline" href="../contact">
+				<Link className="hover:text-slate-400 underline" href="../contact">
 					{" "}
 					contact.
 				</Link>

@@ -10,7 +10,7 @@ export default function ContactLogic() {
 					return (
 						<li key={key}>
 							<Link
-								className="hover:text-blue-400"
+								className="hover:text-slate-400"
 								href={item.href}
 								target="_blank"
 							>

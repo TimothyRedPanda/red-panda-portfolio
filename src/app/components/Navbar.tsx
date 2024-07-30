@@ -14,13 +14,13 @@ export default function Navbar() {
 		const key = index + 1;
 		return (
 			<Link
+				key={key}
 				href={link.href}
 				className={
 					pathName === link.href
-						? "text-blue-400 hover:text-blue-200 underline transition-all ease-in-out"
-						: "text-blue-50 hover:text-blue-200 transition-all ease-in-out"
+						? "text-slate-900 hover:text-slate-500 underline transition-all ease-in-out"
+						: "text-slate-300 hover:text-slate-900 transition-all ease-in-out"
 				}
-				key={key}
 			>
 				{link.text}
 			</Link>
@@ -30,18 +30,7 @@ export default function Navbar() {
 	return (
 		<nav
 			id="header"
-			className="flex
-        h-fit
-        flex-col
-        gap-5
-        p-2
-        text-center
-        bg-gray-700
-        text-blue-50
-        md:flex-row
-        place-content-center
-        shadow-headerShadow
-        "
+			className="flex h-fit w-full flex-col gap-5 justify-evenly p-2 text-center bg-slate-100 md:flex-row place-content-center shadow-headerShadow"
 		>
 			{aTags}
 		</nav>
