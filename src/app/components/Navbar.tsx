@@ -28,10 +28,7 @@ export default function Navbar() {
 	});
 
 	return (
-		<nav
-			id="header"
-			className="flex h-fit w-full font-bold flex-col gap-5 justify-evenly p-2 text-center md:flex-row place-content-center"
-		>
+		<nav className="flex h-fit w-full font-bold flex-row gap-5 justify-evenly items-center p-4 text-center place-content-center">
 			{aTags}
 		</nav>
 	);
