@@ -1,69 +1,72 @@
-type questions_t = {
+type Question = {
 	title: string;
 	description: string;
+	// Use backticks for code examples as they support multi-line strings
 	example: string;
 	output?: string;
-}[];
+};
 
-const questions: questions_t = [
+const questions: Question[] = [
 	{
 		title: "const",
-		description: "A const or constant - cannot have its value be reassigned.",
-		example: 'const party = "like it\'s 1999";\nconsole.log(party);',
+		description:
+			"A constant variable (const) cannot be reassigned after initialization.",
+		example: `const party = "like it's 1999";
+console.log(party);`,
 		output: "like it's 1999",
 	},
 	{
 		title: "let",
-		description: "A let can have its value reassigned.",
-		example:
-			'let coding = "fun!";\ncoding = "Depends on your definition...";\nconsole.log(coding);',
+		description: "A variable declared with let can have its value reassigned.",
+		example: `let coding = "fun!";
+coding = "Depends on your definition...";
+console.log(coding);`,
 		output: "Depends on your definition...",
 	},
 	{
 		title: "boolean",
-		description:
-			"A boolean is a data type that has a value of either true or false.",
-		example: "const isCodingFun = true;\nconsole.log(isCodingFun);",
+		description: "A boolean data type has a value of either true or false.",
+		example: `const isCodingFun = true;
+console.log(isCodingFun);`,
 		output: "true",
 	},
 	{
 		title: "number",
 		description:
-			"A number can either be a a interger (whole number) or a floating-point (number with decimal point).",
-		example:
-			"const age = 34;\nconst pi = 3.14;\nconsole.log(age);\nconsole.log(typeof age);\nconsole.log(pi);\nconsole.log(typeof pi);",
+			"The number data type can represent integers (whole numbers) or floating-point numbers (decimals).",
+		example: `const age = 34;
+const pi = 3.14;
+console.log(age);
+console.log(typeof age);
+console.log(pi);
+console.log(typeof pi);`,
 		output: "34\nnumber\n3.14\nnumber",
 	},
 	{
 		title: "string",
 		description:
-			"A string is a series of characters surrounded by either double or single quotes",
-		example:
-			'const name = "Timothy";\nconsole.log(name);\nconsole.log(typeof name);',
+			"A string is a sequence of characters enclosed in single or double quotes.",
+		example: `const name = "Timothy";
+console.log(name);
+console.log(typeof name);`,
 		output: "Timothy\nstring",
 	},
 	{
 		title: "object",
 		description:
-			"A digital filing cabinet with keys (labels) and values (files or data).",
-		example:
-			'const person =\n{\nname : "Timothy",\nage : 34\n};\nconsole.log(person.name);',
+			"An object is a collection of key-value pairs, similar to a digital filing cabinet.",
+		example: `const person = { name: "Timothy", age: 34 };
+console.log(person.name);`,
 		output: "Timothy",
 	},
 	{
 		title: "array",
 		description:
-			"Like a numbered shopping list. Each item has an index starting at index 0",
-		example:
-			'const pandasShop = [\n"bamboo seeds",\n"bamboo stalks",\n"bamboo leaves",\n"Mean Girls on VHS"\n];\nconsole.log(pandasShop[3]);',
+			"An array is an ordered list of items, where each item has an index starting from 0.",
+		example: `const pandasShop = [ "bamboo seeds", "bamboo stalks", "bamboo leaves", "Mean Girls on VHS" ];
+console.log(pandasShop[3]);`,
 		output: "Mean Girls on VHS",
 	},
-	{
-		title: "accessing and modifying array items",
-		description: "How to access and change individual items in your array.",
-		example:
-			'const meanGirlsChar = [\n"Gretchen",\n"Regina",\n"Karen",\n"Cady"\n];\nconsole.log(meanGirlsChar.length);\nconsole.log(meanGirlsChar[1]);\nmeanGirlsChar[2] = "Damien";\nconsole.log(meanGirlsChar);',
-		output: '4\nRegina\n["Gretchen", "Regina", "Damien", "Cody"]',
-	},
 ];
+
 export default questions;

@@ -56,7 +56,7 @@ Timothy (Red Panda Studios)
 
 ## Feel free to fork the project and have a play.
 
- `src/app/data` - Currently this is where I am keeping my data objects. I have questions/tips in here and my links for the contact section. The data for the questions is an array of objects in the following format (each field is required). If the array is empty the page will render `Coming Soon`. The questions logic is being handled in `src/app/components/QuestionsLogic`
+ `src/app/data` - Currently this is where I am keeping my data objects. I have questions/tips in here and my links for the contact section. The data for the questions is an array of objects in the following format (each field is required accept output which is optional). If the array is empty the page will render `Coming Soon`. The questions logic is being handled in `src/app/components/QuestionsLogic`. On page load it will render a random tip and there is a button for the user to randomise the tip again. But if the page cannot find a tip at the random index it is given it will render `Welcome (Refresh for a random tip)`
 
  ``` typescript
  [

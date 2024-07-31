@@ -1,34 +1,42 @@
+"use client";
 import questions from "../data/questions";
 import PrismLoader from "./PrismLoader";
+import { useState } from "react";
 
-function getRandomQuestion() {
-	return questions[Math.floor(Math.random() * questions.length)];
-}
+export default function Questions(props: { numb: number }) {
+	const alternateClass = (index: number) =>
+		questions.length === 1
+			? "bg-blue-400"
+			: index % 2 === 0
+				? "bg-blue-400 lg:translate-x-1/2 translate-x-0"
+				: "bg-amber-500 lg:translate-x-[-50%] translate-x-0";
 
-export default function Questions() {
-	const question = getRandomQuestion();
+	const [index, setIndex] = useState(props.numb);
 
-	if (!question) {
-		return <h2>Coming Soon</h2>;
+	if (questions[index] === undefined) {
+		return (
+			<h1 className="place-self-center text-3xl">
+				Welcome (Refresh for random tip)
+			</h1>
+		);
 	}
 
-	const { title, description, example, output } = question;
-
-	return (
+	const { title, description, example, output } = questions[index];
+	return questions.length > 0 ? (
 		<section
-			className="flex flex-col gap-1 p-4 rounded-xl shadow-questionShadow w-full text-white bg-slate-900"
+			className="flex flex-col text-1xl gap-1 p-4 rounded-xl shadow-questionShadow w-full md:w-3/4 place-self-center text-slate-950 bg-slate-50"
 			key={title}
 		>
 			<h2 className="text-center underline font-bold text-2xl">{title}</h2>
 			<p>{description}</p>
-			<pre className="code line-numbers bg-slate-900 text-slate-50 p-2 text-xs md:text-base rounded-md">
+			<pre className="code line-numbers p-2 text-xs md:text-base rounded-md">
 				<code className="language-js">{example}</code>
 			</pre>
 			<p className={output ? "" : "hidden"}>Output:</p>
 			<pre
 				className={
 					output
-						? "command-line language-command-line bg-slate-900 text-slate-50 p-2 text-xs md:text-base rounded-md"
+						? "command-line language-command-line p-2 text-xs md:text-base rounded-md"
 						: "hidden"
 				}
 				data-user="Red Panda"
@@ -37,6 +45,17 @@ export default function Questions() {
 				<code>{output}</code>
 			</pre>
 			<PrismLoader />
+			<button
+				className="bg-slate-950 text-slate-50 p-3 w-fit place-self-center rounded"
+				onClick={() => {
+					setIndex(Math.floor(Math.random() * questions.length));
+				}}
+				type="button"
+			>
+				Random Tip
+			</button>
 		</section>
+	) : (
+		<h1>Coming Soon</h1>
 	);
 }

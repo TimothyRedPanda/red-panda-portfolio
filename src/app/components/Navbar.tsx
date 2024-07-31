@@ -30,7 +30,7 @@ export default function Navbar() {
 	return (
 		<nav
 			id="header"
-			className="flex h-fit w-full flex-col gap-5 justify-evenly p-2 text-center md:flex-row place-content-center"
+			className="flex h-fit w-full font-bold flex-col gap-5 justify-evenly p-2 text-center md:flex-row place-content-center"
 		>
 			{aTags}
 		</nav>
