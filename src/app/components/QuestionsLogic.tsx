@@ -1,34 +1,42 @@
 import questions from "../data/questions";
 import PrismLoader from "./PrismLoader";
 
-export default function Questions() {
-	const alternateClass = (index: number) =>
-		questions.length === 1
-			? "bg-blue-400"
-			: index % 2 === 0
-				? "bg-blue-400 lg:translate-x-1/2 translate-x-0"
-				: "bg-amber-500 lg:translate-x-[-50%] translate-x-0";
+function getRandomQuestion() {
+	return questions[Math.floor(Math.random() * questions.length)];
+}
 
-	return questions.length > 0 ? (
-		questions.map((item, index) => {
-			const key = index + 1;
-			return (
-				<section
-					className={`flex flex-col gap-1 p-4 rounded-xl shadow-questionShadow  text-slate-950 bg-opacity-65 max-w-lg ${alternateClass(index)}`}
-					key={key}
-				>
-					<h2 className="text-center underline font-bold text-2xl">
-						{item.question}
-					</h2>
-					<p>{item.answer}</p>
-					<pre className="code text-left bg-slate-900 text-slate-50 p-2 text-xs md:text-base rounded-md">
-						<code className="language-js overflow-auto">{item.example}</code>
-					</pre>
-					<PrismLoader />
-				</section>
-			);
-		})
-	) : (
-		<h2>Coming Soon</h2>
+export default function Questions() {
+	const question = getRandomQuestion();
+
+	if (!question) {
+		return <h2>Coming Soon</h2>;
+	}
+
+	const { title, description, example, output } = question;
+
+	return (
+		<section
+			className="flex flex-col gap-1 p-4 rounded-xl shadow-questionShadow w-full text-white bg-slate-900"
+			key={title}
+		>
+			<h2 className="text-center underline font-bold text-2xl">{title}</h2>
+			<p>{description}</p>
+			<pre className="code line-numbers bg-slate-900 text-slate-50 p-2 text-xs md:text-base rounded-md">
+				<code className="language-js">{example}</code>
+			</pre>
+			<p className={output ? "" : "hidden"}>Output:</p>
+			<pre
+				className={
+					output
+						? "command-line language-command-line bg-slate-900 text-slate-50 p-2 text-xs md:text-base rounded-md"
+						: "hidden"
+				}
+				data-user="Red Panda"
+				data-host="studio"
+			>
+				<code>{output}</code>
+			</pre>
+			<PrismLoader />
+		</section>
 	);
 }

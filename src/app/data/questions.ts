@@ -1,32 +1,69 @@
-type questions_t = { question: string; answer: string; example: string }[];
+type questions_t = {
+	title: string;
+	description: string;
+	example: string;
+	output?: string;
+}[];
 
 const questions: questions_t = [
 	{
-		question: "const",
-		answer:
-			"A const or constant can be thought of as a container with a label. You can read the label and have a look at what is in side but you can't change the contents. As you can see in this example I have assigned 'like it's 1999' to the variable party. I can not reassign this constant, we will always party like it's 1999:",
-		example: 'const party = "like it\'s 1999";',
+		title: "const",
+		description: "A const or constant - cannot have its value be reassigned.",
+		example: 'const party = "like it\'s 1999";\nconsole.log(party);',
+		output: "like it's 1999",
 	},
 	{
-		question: "let",
-		answer:
-			"A let on the other hand can be reassigned, we are not locked into the value we assigned it at declaration. As you can see from this example, I am declaring the variable name and then assigning it later on in the code. This would not work with a constant. In the second example I am declaring and assigning the variable problem but I am still able to reassign it later on. Both examples are a valid use of the let key word:",
+		title: "let",
+		description: "A let can have its value reassigned.",
 		example:
-			'let name;\nname = "Red Panda";\n\nlet problem = "It\'s me";\nproblem = "I\'m the...";',
+			'let coding = "fun!";\ncoding = "Depends on your definition...";\nconsole.log(coding);',
+		output: "Depends on your definition...",
 	},
 	{
-		question: "Types of...well, data types",
-		answer:
-			"Data types tell our computer what...ermmm...type of data it is working with. It is simple as that really. This is important as the computer needs to know these things so it also knows how to handle said data. First up we have strings, these are for text or anything surround by single or double quotes. The quotes is a important distinction as '34' is not a number but a string as it is surround by quote marks. Talking of numbers, these are integers (whole numbers like 2, 43, 2354) or floating-point numbers (numbers with decimal points like 3.2245, -0.5553). Finally we have booleans, these are true or false. Below are some examples written out just for you:",
-		example:
-			'const string = "string";\n\nconst number = 1;\n\nconst boolean = true;',
+		title: "boolean",
+		description:
+			"A boolean is a data type that has a value of either true or false.",
+		example: "const isCodingFun = true;\nconsole.log(isCodingFun);",
+		output: "true",
 	},
 	{
-		question: "The story so far...",
-		answer:
-			"Okay I have given you a basic overview of variables and data types. Have a think about what each of the following would be and which could be reassigned or not: ",
+		title: "number",
+		description:
+			"A number can either be a a interger (whole number) or a floating-point (number with decimal point).",
 		example:
-			'const age = 34;\n\nconst name = "Timothy"\n\nlet isLearningCode = true;',
+			"const age = 34;\nconst pi = 3.14;\nconsole.log(age);\nconsole.log(typeof age);\nconsole.log(pi);\nconsole.log(typeof pi);",
+		output: "34\nnumber\n3.14\nnumber",
+	},
+	{
+		title: "string",
+		description:
+			"A string is a series of characters surrounded by either double or single quotes",
+		example:
+			'const name = "Timothy";\nconsole.log(name);\nconsole.log(typeof name);',
+		output: "Timothy\nstring",
+	},
+	{
+		title: "object",
+		description:
+			"A digital filing cabinet with keys (labels) and values (files or data).",
+		example:
+			'const person =\n{\nname : "Timothy",\nage : 34\n};\nconsole.log(person.name);',
+		output: "Timothy",
+	},
+	{
+		title: "array",
+		description:
+			"Like a numbered shopping list. Each item has an index starting at index 0",
+		example:
+			'const pandasShop = [\n"bamboo seeds",\n"bamboo stalks",\n"bamboo leaves",\n"Mean Girls on VHS"\n];\nconsole.log(pandasShop[3]);',
+		output: "Mean Girls on VHS",
+	},
+	{
+		title: "accessing and modifying array items",
+		description: "How to access and change individual items in your array.",
+		example:
+			'const meanGirlsChar = [\n"Gretchen",\n"Regina",\n"Karen",\n"Cady"\n];\nconsole.log(meanGirlsChar.length);\nconsole.log(meanGirlsChar[1]);\nmeanGirlsChar[2] = "Damien";\nconsole.log(meanGirlsChar);',
+		output: '4\nRegina\n["Gretchen", "Regina", "Damien", "Cody"]',
 	},
 ];
 export default questions;
