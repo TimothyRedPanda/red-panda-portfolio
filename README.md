@@ -54,6 +54,45 @@ Thanks again,
 
 Timothy (Red Panda Studios)
 
+## Feel free to fork the project and have a play.
+
+ `src/app/data` - Currently this is where I am keeping my data objects. I have questions/tips in here and my links for the contact section. The data for the questions is an array of objects in the following format (each field is required). But if the array is empty the page will render `Coming Soon`. The questions logic is being handled in `src/app/components/QuestionsLogic`
+
+ ``` typescript
+ [
+    {
+     question: "let",
+     answer: "Any details on what a let is etc.",
+     example: 'let name = "Timothy";' 
+    }
+ ]
+ // The example property will be rendered on the page as a code block using PrismJS, for example:
+ ```
+ ``` javascript
+ let name = "Timothy";
+ ```
+
+ Everything should be labelled relatively straight forwardly, but feel free to ask if you have any questions. In `src/app/components/PrismLoader.tsx` is the logic for handling the syntax highlighting. If you were interested:
+ ``` typescript
+// This is declaring the page as client side - and is needed for useEffect.
+"use client";
+
+// Here I am bringing in useEffect from React and the PrismJS theme and language 
+// support
+import { useEffect } from "react";
+import Prism from "prismjs";
+import "prismjs/themes/prism-okaidia.css";
+import "prismjs/components/prism-javascript";
+
+// Finally this is the logic for syntax highlighting with PrismJs.
+export default function PrismLoader() {
+	useEffect(() => {
+		Prism.highlightAll();
+	}, []);
+	return <div className="hidden" />;
+}
+ ```
+
 ## Places to visit!
 
 * Deployed version: [Red Panda Studio](https://www.red-panda.studio)
