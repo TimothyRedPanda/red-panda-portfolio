@@ -1,9 +1,10 @@
 import Paragraph from "../components/Paragraph";
 import Link from "next/link";
 import Title from "../components/Title";
+import MyTable from "../components/Table";
 
 export default function About() {
-	const aboutTitle: string = "About";
+	const aboutTitle: string = "About Red Panda Studio";
 	const paraText =
 		"Well, hello there. " +
 		"I'm Timothy (sorry to tell you my name is not Red Panda). " +
@@ -24,6 +25,8 @@ export default function About() {
 					contact.
 				</Link>
 			</Paragraph>
+			<h2 className="p-5 underline font-bold">Glossary of terms</h2>
+			<MyTable />
 		</main>
 	);
 }

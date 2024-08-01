@@ -1,7 +1,7 @@
 [
 	{
 		"title": "const",
-		"description": "A constant variable (const) cannot be reassigned after initialization.",
+		"description": "A constant variable (const) cannot be reassigned after declaration.",
 		"example": "const party = \"like it's 1999\";\nconsole.log(party);",
 		"output": "like it's 1999"
 	},
@@ -40,5 +40,23 @@
 		"description": "An array is an ordered list of items, where each item has an index starting from 0.",
 		"example": "const pandasShop = [ \"bamboo seeds\", \"bamboo stalks\", \"bamboo leaves\", \"Mean Girls on VHS\" ];\nconsole.log(pandasShop[3]);",
 		"output": "Mean Girls on VHS"
+	},
+	{
+		"title": "undefined",
+		"description": "The undefined data type represents a variable that has been declared but not yet assigned a value.",
+		"example": "let meanGirls;\nconsole.log(meanGirls);",
+		"output": "undefined"
+	},
+	{
+		"title": "null",
+		"description": "The null data type represents the intentional absence of any object value.",
+		"example": "const myBrain = null;\nconsole.log(myBrain);",
+		"output": "null"
+	},
+	{
+		"title": "function",
+		"description": "A function is a block of code that can be reused by calling it with arguments.",
+		"example": "function partyWith(name) { return `${name} is someone I wanna party with!`; }\nconst partyTime = partyWith(\"Taylor Swift\");\nconsole.log(partyTime);",
+		"output": "Taylor Swift is someone I wanna party with!"
 	}
 ]
