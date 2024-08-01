@@ -16,11 +16,7 @@ export default function Questions(props: { numb: number }) {
 	const [index, setIndex] = useState(props.numb);
 
 	if (!questions[index]) {
-		return (
-			<h1 className="place-self-center text-3xl">
-				Welcome (Refresh for random tip)
-			</h1>
-		);
+		return <h1 className="place-self-center text-3xl">Coming Soon</h1>;
 	}
 
 	const { title, description, example, output } = questions[index];

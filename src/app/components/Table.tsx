@@ -1,7 +1,7 @@
 import questions from "../data/questions.json";
 
-function DataTable() {
-	return (
+function GlossaryTable() {
+	return questions.length > 0 ? (
 		<table className="border-separate border-spacing-x-4 overflow-scroll">
 			<thead>
 				<tr>
@@ -18,7 +18,9 @@ function DataTable() {
 				))}
 			</tbody>
 		</table>
+	) : (
+		<h1 className="place-self-center text-2xl">Coming Soon</h1>
 	);
 }
 
-export default DataTable;
+export default GlossaryTable;

@@ -1,7 +1,7 @@
 import Paragraph from "../components/Paragraph";
 import Link from "next/link";
 import Title from "../components/Title";
-import MyTable from "../components/Table";
+import GlossaryTable from "../components/Table";
 
 export default function About() {
 	const aboutTitle: string = "About Red Panda Studio";
@@ -26,7 +26,7 @@ export default function About() {
 				</Link>
 			</Paragraph>
 			<h2 className="p-5 underline font-bold">Glossary of terms</h2>
-			<MyTable />
+			<GlossaryTable/>
 		</main>
 	);
 }
