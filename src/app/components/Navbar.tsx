@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Navbar() {
+	const [open, setOpen] = useState(false);
 	const pathName = usePathname();
+
 	const hrefs = [
 		{ href: "/", text: "Home" },
 		{ href: "/about", text: "About" },
@@ -28,8 +31,29 @@ export default function Navbar() {
 	});
 
 	return (
-		<nav className="flex h-fit w-full font-bold flex-row gap-5 justify-evenly items-center p-4 text-center place-content-center">
-			{aTags}
+		<nav className="flex h-fit w-full font-bold flex-col gap-1 text-1xl justify-evenly md:flex-row items-center p-2 text-center place-content-center">
+			<span
+				className={
+					!open
+						? "hidden"
+						: "flex w-full gap-2 flex-col md:flex-row justify-evenly"
+				}
+			>
+				{aTags}
+			</span>
+			<button
+				type="button"
+				onClick={() => {
+					setOpen(!open);
+				}}
+				className={
+					open
+						? "opacity-20 rounded-lg w-fit h-full justify-self-end text-base text-slate-950"
+						: "opacity-75 underline"
+				}
+			>
+				{!open ? "open" : "close"}
+			</button>
 		</nav>
 	);
 }
