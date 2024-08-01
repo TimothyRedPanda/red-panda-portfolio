@@ -26,9 +26,18 @@ body {
   font-style: normal;
 }
 
+.frog {
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  top: 95%;
+}
+
+.frog:hover {
+  top: 91%;
+}
+
 .logo > * > *,
 .logo > * > * > * {
-  transform: translateY(0);
   transition: all 0.35s ease-in-out;
 }
 
@@ -38,6 +47,11 @@ body {
   fill: #f7941d;
 }
 
+.logo > * > * > .cls-1,
+.logo > * > .cls-3 {
+  fill: #070707;
+}
+
 .logo:hover > * > * > .cls-2 {
-  fill: #231f20;
+  fill: #0f0f0f;
 }

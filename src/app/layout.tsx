@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import "./globals.css";
+import FrogFriend from "./components/FrogFriend";
 
 export const metadata: Metadata = {
 	title: "Let's learn!",
@@ -18,6 +19,7 @@ export default function RootLayout({
 				<Navbar />
 				<main className="overflow-x-hidden overflow-y-scroll pb-10">
 					{children}
+					<FrogFriend/>
 				</main>
 			</body>
 		</html>

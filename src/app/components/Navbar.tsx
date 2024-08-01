@@ -14,6 +14,8 @@ export default function Navbar() {
 	];
 
 	const aTags = hrefs.map((link, index) => {
+		let hidden;
+		!open ? hidden = "hidden" : "inline"
 		const key = index + 1;
 		return (
 			<Link
@@ -21,9 +23,8 @@ export default function Navbar() {
 				href={link.href}
 				className={
 					pathName === link.href
-						? "text-slate-900 hover:text-slate-500 underline transition-all ease-in-out"
-						: "text-slate-300 hover:text-slate-900 transition-all ease-in-out"
-				}
+						? `text-slate-900 hover:text-slate-500 underline transition-all ease-in-out ${hidden}`
+						: `text-slate-300 hover:text-slate-900 transition-all ease-in-out ${hidden}`}
 			>
 				{link.text}
 			</Link>
@@ -31,16 +32,8 @@ export default function Navbar() {
 	});
 
 	return (
-		<nav className="flex h-fit w-full font-bold flex-col gap-1 text-1xl justify-evenly md:flex-row items-center p-2 text-center place-content-center">
-			<span
-				className={
-					!open
-						? "hidden"
-						: "flex w-full gap-2 flex-col md:flex-row justify-evenly"
-				}
-			>
+		<nav className="flex flex-col md:flex-row justify-center items-center gap-5 p-3 font-bold">
 				{aTags}
-			</span>
 			<button
 				type="button"
 				onClick={() => {
@@ -48,8 +41,8 @@ export default function Navbar() {
 				}}
 				className={
 					open
-						? "opacity-20 rounded-lg w-fit h-full justify-self-end text-base text-slate-950"
-						: "opacity-75 underline"
+						? "opacity-20 rounded-lg w-fit p-3 text-base text-slate-950"
+						: "opacity-75 underline p-3"
 				}
 			>
 				{!open ? "open" : "close"}
