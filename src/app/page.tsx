@@ -1,6 +1,6 @@
 import RedPandaStudio from "./components/RedPandaStudio";
 import QuestionsLogic from "./components/QuestionsLogic";
-import questions from "./data/questions";
+import questions from "./data/questions.json";
 
 export default function Home() {
 	const randomNumb = Math.floor(Math.random() * questions.length);

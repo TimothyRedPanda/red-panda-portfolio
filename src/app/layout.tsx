@@ -3,8 +3,8 @@ import Navbar from "./components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Let's learn React!",
-	description: "Helping fellow learners of React.",
+	title: "Let's learn!",
+	description: "Helping fellow developers in their learning journeys.",
 };
 
 export default function RootLayout({

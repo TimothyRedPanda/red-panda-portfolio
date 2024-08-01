@@ -1,4 +1,4 @@
-import listItems from "../data/contactList";
+import listItems from "../data/contactList.json";
 import Link from "next/link";
 
 export default function ContactLogic() {
