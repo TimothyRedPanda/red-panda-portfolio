@@ -3,6 +3,7 @@ import questions from "../data/questions.json";
 import PrismLoader from "./PrismLoader";
 import { useState } from "react";
 
+
 export default function Questions(props: { numb: number }) {
 	const alternateClass = (index: number) => {
 		if (questions.length === 1) {
