@@ -2,16 +2,16 @@ const FrogFriend = () => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		id="Layer_1"
-        viewBox="0 0 200.1 202.86"
-        width={"100px"}
-        className="frog"
+		viewBox="0 0 200.1 202.86"
+		width={"100px"}
+		className="frog"
 	>
-        <title>Frog</title>
+		<title>Frog</title>
 		<defs>
 			<style>
-                {".cls-1{fill:#788248}.cls-8{fill:#2f301a}.cls-9{fill:#f6f7f2}"}
-            </style>
-        </defs>
+				{".cls-1{fill:#788248}.cls-8{fill:#2f301a}.cls-9{fill:#f6f7f2}"}
+			</style>
+		</defs>
 		<g id="Frog">
 			<g id="Frog-2">
 				<path
@@ -20,7 +20,7 @@ const FrogFriend = () => (
 						fill: "#c9cbbf",
 						stroke: "#6d8543",
 						strokeMiterlimit: 10,
-                        strokeWidth: 6
+						strokeWidth: 6,
 					}}
 				/>
 				<path

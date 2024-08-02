@@ -37,7 +37,8 @@ body {
 }
 
 .logo > * > *,
-.logo > * > * > * {
+.logo > * > * > *,
+.tooltip {
   transition: all 0.35s ease-in-out;
 }
 

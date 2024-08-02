@@ -1,62 +1,380 @@
 [
 	{
-		"title": "const",
-		"description": "A constant variable (const) cannot be reassigned after declaration.",
-		"example": "const party = \"like it's 1999\";\nconsole.log(party);",
-		"output": "like it's 1999"
-	},
-	{
-		"title": "let",
-		"description": "A variable declared with let can have its value reassigned.",
-		"example": "let coding = \"fun!\";\ncoding = \"Depends on your definition...\";\nconsole.log(coding);",
-		"output": "Depends on your definition..."
-	},
-	{
-		"title": "boolean",
-		"description": "A boolean data type has a value of either true or false.",
-		"example": "const isCodingFun = true;\nconsole.log(isCodingFun);",
-		"output": "true"
-	},
-	{
-		"title": "number",
-		"description": "The number data type can represent integers (whole numbers) or floating-point numbers (decimals).",
-		"example": "const age = 34;\nconst pi = 3.14;\nconsole.log(age);\nconsole.log(typeof age);\nconsole.log(pi);\nconsole.log(typeof pi);",
-		"output": "34\nnumber\n3.14\nnumber"
-	},
-	{
-		"title": "string",
-		"description": "A string is a sequence of characters enclosed in single or double quotes.",
-		"example": "const name = \"Timothy\";\nconsole.log(name);\nconsole.log(typeof name);",
-		"output": "Timothy\nstring"
-	},
-	{
-		"title": "object",
-		"description": "An object is a collection of key-value pairs, similar to a digital filing cabinet.",
-		"example": "const person = { name: \"Timothy\", age: 34 };\nconsole.log(person.name);",
-		"output": "Timothy"
-	},
-	{
-		"title": "array",
-		"description": "An array is an ordered list of items, where each item has an index starting from 0.",
-		"example": "const pandasShop = [ \"bamboo seeds\", \"bamboo stalks\", \"bamboo leaves\", \"Mean Girls on VHS\" ];\nconsole.log(pandasShop[3]);",
-		"output": "Mean Girls on VHS"
-	},
-	{
 		"title": "undefined",
 		"description": "The undefined data type represents a variable that has been declared but not yet assigned a value.",
 		"example": "let meanGirls;\nconsole.log(meanGirls);",
 		"output": "undefined"
 	},
 	{
-		"title": "null",
-		"description": "The null data type represents the intentional absence of any object value.",
-		"example": "const myBrain = null;\nconsole.log(myBrain);",
-		"output": "null"
+		"title": "Variable Declaration with var",
+		"description": "The 'var' keyword is used to declare variables. It has function scope.",
+		"example": "var movie = 'Mean Girls';\nconsole.log(movie);",
+		"output": "Mean Girls"
 	},
 	{
-		"title": "function",
-		"description": "A function is a block of code that can be reused by calling it with arguments.",
-		"example": "function partyWith(name) { return `${name} is someone I wanna party with!`; }\nconst partyTime = partyWith(\"Taylor Swift\");\nconsole.log(partyTime);",
-		"output": "Taylor Swift is someone I wanna party with!"
+		"title": "Variable Declaration with let",
+		"description": "The 'let' keyword is used to declare variables. It has block scope.",
+		"example": "let movie = 'Mean Girls';\nif (true) {\n  let movie = 'Mean Girls 2';\n  console.log(movie);\n}\nconsole.log(movie);",
+		"output": "Mean Girls 2\nMean Girls"
+	},
+	{
+		"title": "Variable Declaration with const",
+		"description": "The 'const' keyword is used to declare variables that cannot be reassigned.",
+		"example": "const movie = 'Mean Girls';\nmovie = 'Mean Girls 2';\nconsole.log(movie);",
+		"output": "TypeError: Assignment to constant variable."
+	},
+	{
+		"title": "Basic Function Declaration",
+		"description": "Functions in JavaScript are defined using the 'function' keyword.",
+		"example": "function greet() {\n  return 'Hello, World!';\n}\nconsole.log(greet());",
+		"output": "Hello, World!"
+	},
+	{
+		"title": "Arrow Functions",
+		"description": "Arrow functions provide a shorter syntax for writing functions.",
+		"example": "const greet = () => 'Hello, World!';\nconsole.log(greet());",
+		"output": "Hello, World!"
+	},
+	{
+		"title": "String Interpolation",
+		"description": "Template literals allow for embedded expressions using backticks.",
+		"example": "const name = 'Cady';\nconst greeting = `Hello, ${name}!`;\nconsole.log(greeting);",
+		"output": "Hello, Cady!"
+	},
+	{
+		"title": "Array Declaration",
+		"description": "Arrays are used to store multiple values in a single variable.",
+		"example": "const plastics = ['Regina', 'Gretchen', 'Karen'];\nconsole.log(plastics);",
+		"output": "[ 'Regina', 'Gretchen', 'Karen' ]"
+	},
+	{
+		"title": "Array Methods - push",
+		"description": "The 'push' method adds new items to the end of an array.",
+		"example": "const plastics = ['Regina', 'Gretchen', 'Karen'];\nplastics.push('Cady');\nconsole.log(plastics);",
+		"output": "[ 'Regina', 'Gretchen', 'Karen', 'Cady' ]"
+	},
+	{
+		"title": "Object Declaration",
+		"description": "Objects are used to store collections of key-value pairs.",
+		"example": "const student = {\n  name: 'Cady',\n  age: 16,\n  school: 'North Shore High'\n};\nconsole.log(student);",
+		"output": "{ name: 'Cady', age: 16, school: 'North Shore High' }"
+	},
+	{
+		"title": "Accessing Object Properties",
+		"description": "Object properties can be accessed using dot notation or bracket notation.",
+		"example": "const student = {\n  name: 'Cady',\n  age: 16,\n  school: 'North Shore High'\n};\nconsole.log(student.name);\nconsole.log(student['age']);",
+		"output": "Cady\n16"
+	},
+	{
+		"title": "Conditional Statements - if",
+		"description": "The 'if' statement executes a block of code if a specified condition is true.",
+		"example": "const meanGirls = true;\nif (meanGirls) {\n  console.log('You can’t sit with us!');\n}",
+		"output": "You can’t sit with us!"
+	},
+	{
+		"title": "For Loop",
+		"description": "A 'for' loop repeats until a specified condition evaluates to false.",
+		"example": "for (let i = 0; i < 3; i++) {\n  console.log('You go, Glen Coco!');\n}",
+		"output": "You go, Glen Coco!\nYou go, Glen Coco!\nYou go, Glen Coco!"
+	},
+	{
+		"title": "While Loop",
+		"description": "A 'while' loop executes as long as a specified condition is true.",
+		"example": "let i = 0;\nwhile (i < 3) {\n  console.log('That’s so fetch!');\n  i++;\n}",
+		"output": "That’s so fetch!\nThat’s so fetch!\nThat’s so fetch!"
+	},
+	{
+		"title": "Switch Statement",
+		"description": "The 'switch' statement evaluates an expression and executes the corresponding case.",
+		"example": "const day = 'Wednesday';\nswitch (day) {\n  case 'Monday':\n    console.log('It’s Monday.');\n    break;\n  case 'Wednesday':\n    console.log('On Wednesdays, we wear pink.');\n    break;\n  default:\n    console.log('Invalid day.');\n}",
+		"output": "On Wednesdays, we wear pink."
+	},
+	{
+		"title": "Basic Error Handling",
+		"description": "Errors can be handled using try-catch blocks.",
+		"example": "try {\n  throw new Error('Something went wrong!');\n} catch (error) {\n  console.log(error.message);\n}",
+		"output": "Something went wrong!"
+	},
+	{
+		"title": "Async Functions",
+		"description": "Async functions allow for asynchronous, non-blocking code.",
+		"example": "const fetchMeanGirlsQuote = async () => {\n  return 'That is so fetch!';\n};\nfetchMeanGirlsQuote().then(quote => console.log(quote));",
+		"output": "That is so fetch!"
+	},
+	{
+		"title": "Promises",
+		"description": "Promises represent the eventual completion (or failure) of an asynchronous operation.",
+		"example": "const promise = new Promise((resolve, reject) => {\n  setTimeout(() => resolve('Promise resolved!'), 1000);\n});\npromise.then(result => console.log(result));",
+		"output": "Promise resolved!"
+	},
+	{
+		"title": "JSON Parsing",
+		"description": "JSON.parse() parses a JSON string, constructing the JavaScript value or object described by the string.",
+		"example": "const jsonString = '{\"name\":\"Cady\", \"age\":16}';\nconst student = JSON.parse(jsonString);\nconsole.log(student);",
+		"output": "{ name: 'Cady', age: 16 }"
+	},
+	{
+		"title": "JSON Stringify",
+		"description": "JSON.stringify() converts a JavaScript object or value to a JSON string.",
+		"example": "const student = {\n  name: 'Cady',\n  age: 16\n};\nconst jsonString = JSON.stringify(student);\nconsole.log(jsonString);",
+		"output": "{\"name\":\"Cady\",\"age\":16}"
+	},
+	{
+		"title": "Function with Parameters",
+		"description": "Functions can accept parameters, which are specified within the parentheses.",
+		"example": "function greet(name) {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('Elle'));",
+		"output": "Hello, Elle!"
+	},
+	{
+		"title": "Default Parameters",
+		"description": "Functions can have default parameter values.",
+		"example": "function greet(name = 'Barbie') {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet());",
+		"output": "Hello, Barbie!"
+	},
+	{
+		"title": "Rest Parameters",
+		"description": "Rest parameters allow functions to accept an indefinite number of arguments.",
+		"example": "function showCharacters(...characters) {\n  console.log(characters);\n}\nshowCharacters('Barbie', 'Ken', 'Skipper');",
+		"output": "[ 'Barbie', 'Ken', 'Skipper' ]"
+	},
+	{
+		"title": "Spread Operator",
+		"description": "The spread operator allows an iterable such as an array to be expanded in places where zero or more arguments are expected.",
+		"example": "const originalCharacters = ['Barbie', 'Ken'];\nconst newCharacters = [...originalCharacters, 'Skipper'];\nconsole.log(newCharacters);",
+		"output": "[ 'Barbie', 'Ken', 'Skipper' ]"
+	},
+	{
+		"title": "Destructuring Assignment - Array",
+		"description": "Destructuring assignment allows for the extraction of values from arrays.",
+		"example": "const plastics = ['Regina', 'Gretchen', 'Karen'];\nconst [queenBee, ...rest] = plastics;\nconsole.log(queenBee);\nconsole.log(rest);",
+		"output": "Regina\n[ 'Gretchen', 'Karen' ]"
+	},
+	{
+		"title": "Destructuring Assignment - Object",
+		"description": "Destructuring assignment allows for the extraction of values from objects.",
+		"example": "const dog = {\n  name: 'Chloe',\n  breed: 'Chihuahua'\n};\nconst { name, breed } = dog;\nconsole.log(name);\nconsole.log(breed);",
+		"output": "Chloe\nChihuahua"
+	},
+	{
+		"title": "Object Property Shorthand",
+		"description": "Shorthand syntax can be used for defining object properties.",
+		"example": "const name = 'Elle';\nconst school = 'Harvard';\nconst student = { name, school };\nconsole.log(student);",
+		"output": "{ name: 'Elle', school: 'Harvard' }"
+	},
+	{
+		"title": "Object Methods",
+		"description": "Objects can have methods, which are functions stored as object properties.",
+		"example": "const dog = {\n  name: 'Papi',\n  speak() {\n    return 'Woof!';\n  }\n};\nconsole.log(dog.speak());",
+		"output": "Woof!"
+	},
+	{
+		"title": "Classes",
+		"description": "Classes are templates for creating objects and encapsulate data with code.",
+		"example": "class Dog {\n  constructor(name) {\n    this.name = name;\n  }\n  speak() {\n    return 'Woof!';\n  }\n}\nconst papi = new Dog('Papi');\nconsole.log(papi.speak());",
+		"output": "Woof!"
+	},
+	{
+		"title": "Inheritance",
+		"description": "Classes can extend other classes to inherit their properties and methods.",
+		"example": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n}\nclass Dog extends Animal {\n  speak() {\n    return 'Woof!';\n  }\n}\nconst papi = new Dog('Papi');\nconsole.log(papi.speak());",
+		"output": "Woof!"
+	},
+	{
+		"title": "Template Literals for Multiline Strings",
+		"description": "Template literals can be used to create multiline strings.",
+		"example": "const speech = `I have a little experience with law.\nI believe I can make a difference.`;\nconsole.log(speech);",
+		"output": "I have a little experience with law.\nI believe I can make a difference."
+	},
+	{
+		"title": "Array Methods - map",
+		"description": "The 'map' method creates a new array populated with the results of calling a function on every element in the array.",
+		"example": "const plastics = ['Regina', 'Gretchen', 'Karen'];\nconst greetings = plastics.map(name => `Hi, ${name}!`);\nconsole.log(greetings);",
+		"output": "[ 'Hi, Regina!', 'Hi, Gretchen!', 'Hi, Karen!' ]"
+	},
+	{
+		"title": "Array Methods - filter",
+		"description": "The 'filter' method creates a new array with all elements that pass the test implemented by the provided function.",
+		"example": "const grades = [65, 85, 90, 55];\nconst passingGrades = grades.filter(grade => grade >= 60);\nconsole.log(passingGrades);",
+		"output": "[ 65, 85, 90 ]"
+	},
+	{
+		"title": "Array Methods - reduce",
+		"description": "The 'reduce' method executes a reducer function on each element of the array, resulting in a single output value.",
+		"example": "const numbers = [1, 2, 3, 4];\nconst sum = numbers.reduce((total, number) => total + number, 0);\nconsole.log(sum);",
+		"output": "10"
+	},
+	{
+		"title": "Prototype",
+		"description": "All JavaScript objects inherit properties and methods from a prototype.",
+		"example": "function Dog(name) {\n  this.name = name;\n}\nDog.prototype.speak = function() {\n  return 'Woof!';\n};\nconst papi = new Dog('Papi');\nconsole.log(papi.speak());",
+		"output": "Woof!"
+	},
+	{
+		"title": "Closures",
+		"description": "A closure is the combination of a function bundled together with references to its surrounding state.",
+		"example": "function makeGreet(greeting) {\n  return function(name) {\n    return `${greeting}, ${name}!`;\n  };\n}\nconst greetMeanGirls = makeGreet('Hello');\nconsole.log(greetMeanGirls('Regina'));",
+		"output": "Hello, Regina!"
+	},
+	{
+		"title": "IIFE (Immediately Invoked Function Expression)",
+		"description": "An IIFE is a function that runs as soon as it is defined.",
+		"example": "(function() {\n  console.log('You can’t sit with us!');\n})();",
+		"output": "You can’t sit with us!"
+	},
+	{
+		"title": "Hoisting",
+		"description": "Hoisting is JavaScript's default behavior of moving declarations to the top.",
+		"example": "console.log(movie);\nvar movie = 'Mean Girls';",
+		"output": "undefined"
+	},
+	{
+		"title": "Strict Mode",
+		"description": "Strict mode makes it easier to write 'secure' JavaScript.",
+		"example": "'use strict';\nlet x = 3.14;\ndelete x;",
+		"output": "SyntaxError: Delete of an unqualified identifier in strict mode."
+	},
+	{
+		"title": "SetTimeout",
+		"description": "The setTimeout() method calls a function after a specified number of milliseconds.",
+		"example": "setTimeout(() => {\n  console.log('That’s so fetch!');\n}, 1000);",
+		"output": "That’s so fetch! (after 1 second)"
+	},
+	{
+		"title": "SetInterval",
+		"description": "The setInterval() method calls a function at specified intervals (in milliseconds).",
+		"example": "const intervalID = setInterval(() => {\n  console.log('What, like it’s hard?');\n}, 2000);\n// To stop the interval, you can call clearInterval(intervalID);",
+		"output": "What, like it’s hard? (every 2 seconds)"
+	},
+	{
+		"title": "DOM Manipulation - Selecting Elements",
+		"description": "You can select HTML elements using methods like getElementById or querySelector.",
+		"example": "const element = document.getElementById('example');\nconsole.log(element);",
+		"output": "HTMLElement (if an element with id 'example' exists)"
+	},
+	{
+		"title": "DOM Manipulation - Changing Content",
+		"description": "You can change the content of an HTML element using innerHTML.",
+		"example": "const element = document.getElementById('example');\nelement.innerHTML = 'Hello, Barbie!';",
+		"output": "Changes the inner HTML of the element to 'Hello, Barbie!'"
+	},
+	{
+		"title": "Event Listeners",
+		"description": "Event listeners are used to run code when an event occurs.",
+		"example": "document.getElementById('myButton').addEventListener('click', function() {\n  alert('Hello, Elle Woods!');\n});",
+		"output": "Shows an alert saying 'Hello, Elle Woods!' when the button is clicked"
+	},
+	{
+		"title": "Local Storage",
+		"description": "Local storage allows you to store data locally within the user's browser.",
+		"example": "localStorage.setItem('movie', 'Legally Blonde');\nconst movie = localStorage.getItem('movie');\nconsole.log(movie);",
+		"output": "Legally Blonde"
+	},
+	{
+		"title": "Session Storage",
+		"description": "Session storage is similar to local storage, but the data is cleared when the page session ends.",
+		"example": "sessionStorage.setItem('dog', 'Chloe');\nconst dog = sessionStorage.getItem('dog');\nconsole.log(dog);",
+		"output": "Chloe"
+	},
+	{
+		"title": "Query Parameters",
+		"description": "Query parameters are a common way to pass information to a webpage.",
+		"example": "const params = new URLSearchParams('?movie=Barbie&character=Ken');\nconsole.log(params.get('movie'));\nconsole.log(params.get('character'));",
+		"output": "Barbie\nKen"
+	},
+	{
+		"title": "Fetch API",
+		"description": "The Fetch API provides a way to make network requests and handle responses.",
+		"example": "fetch('https://api.example.com/mean-girls-quotes')\n  .then(response => response.json())\n  .then(data => console.log(data));",
+		"output": "Logs the response data from the API"
+	},
+	{
+		"title": "Async/Await",
+		"description": "Async/await syntax makes asynchronous code look more like synchronous code.",
+		"example": "async function fetchQuote() {\n  const response = await fetch('https://api.example.com/legally-blonde-quotes');\n  const data = await response.json();\n  console.log(data);\n}\nfetchQuote();",
+		"output": "Logs the response data from the API"
+	},
+	{
+		"title": "Modules - Import",
+		"description": "Modules in JavaScript allow you to import and export code from different files.",
+		"example": "// In a file named 'movieQuotes.js'\nexport const quote = 'You go, Glen Coco!';\n\n// In another file\nimport { quote } from './movieQuotes.js';\nconsole.log(quote);",
+		"output": "You go, Glen Coco!"
+	},
+	{
+		"title": "Modules - Export",
+		"description": "Modules allow you to export code from a file to be used in another file.",
+		"example": "// In a file named 'barbieQuotes.js'\nconst quote = 'Get your sparkle on!';\nexport default quote;\n\n// In another file\nimport barbieQuote from './barbieQuotes.js';\nconsole.log(barbieQuote);",
+		"output": "Get your sparkle on!"
+	},
+	{
+		"title": "Spread Operator with Objects",
+		"description": "The spread operator can be used to copy properties from one object to another.",
+		"example": "const original = { name: 'Elle', school: 'Harvard' };\nconst clone = { ...original, major: 'Law' };\nconsole.log(clone);",
+		"output": "{ name: 'Elle', school: 'Harvard', major: 'Law' }"
+	},
+	{
+		"title": "Math Object - Random",
+		"description": "The Math.random() function returns a random number between 0 (inclusive) and 1 (exclusive).",
+		"example": "const randomQuoteIndex = Math.floor(Math.random() * quotes.length);\nconsole.log(quotes[randomQuoteIndex]);",
+		"output": "Logs a random quote from the quotes array"
+	},
+	{
+		"title": "Date Object",
+		"description": "The Date object is used to work with dates and times.",
+		"example": "const today = new Date();\nconsole.log(today);",
+		"output": "Logs the current date and time"
+	},
+	{
+		"title": "Array Methods - find",
+		"description": "The 'find' method returns the value of the first element in the array that satisfies the provided testing function.",
+		"example": "const dogs = [\n  { name: 'Chloe', breed: 'Chihuahua' },\n  { name: 'Papi', breed: 'Chihuahua' }\n];\nconst chihuahua = dogs.find(dog => dog.breed === 'Chihuahua');\nconsole.log(chihuahua);",
+		"output": "{ name: 'Chloe', breed: 'Chihuahua' }"
+	},
+	{
+		"title": "Array Methods - includes",
+		"description": "The 'includes' method determines whether an array includes a certain value.",
+		"example": "const characters = ['Barbie', 'Ken', 'Skipper'];\nconst hasKen = characters.includes('Ken');\nconsole.log(hasKen);",
+		"output": "true"
+	},
+	{
+		"title": "Object.entries()",
+		"description": "The Object.entries() method returns an array of a given object's own enumerable string-keyed property [key, value] pairs.",
+		"example": "const dog = { name: 'Papi', breed: 'Chihuahua' };\nconsole.log(Object.entries(dog));",
+		"output": "[ ['name', 'Papi'], ['breed', 'Chihuahua'] ]"
+	},
+	{
+		"title": "Object.keys()",
+		"description": "The Object.keys() method returns an array of a given object's own enumerable property names.",
+		"example": "const dog = { name: 'Papi', breed: 'Chihuahua' };\nconsole.log(Object.keys(dog));",
+		"output": "[ 'name', 'breed' ]"
+	},
+	{
+		"title": "Object.values()",
+		"description": "The Object.values() method returns an array of a given object's own enumerable property values.",
+		"example": "const dog = { name: 'Papi', breed: 'Chihuahua' };\nconsole.log(Object.values(dog));",
+		"output": "[ 'Papi', 'Chihuahua' ]"
+	},
+	{
+		"title": "Function Binding",
+		"description": "The bind() method creates a new function that, when called, has its 'this' keyword set to the provided value.",
+		"example": "const dog = {\n  name: 'Chloe',\n  speak() {\n    console.log(`Woof! My name is ${this.name}`);\n  }\n};\nconst speak = dog.speak.bind(dog);\nspeak();",
+		"output": "Woof! My name is Chloe"
+	},
+	{
+		"title": "Template Literals - Expressions",
+		"description": "Template literals can include expressions that will be evaluated.",
+		"example": "const movie = 'Mean Girls';\nconst year = 2004;\nconst message = `${movie} was released in ${year}.`;\nconsole.log(message);",
+		"output": "Mean Girls was released in 2004."
+	},
+	{
+		"title": "Array Methods - forEach",
+		"description": "The 'forEach' method executes a provided function once for each array element.",
+		"example": "const characters = ['Barbie', 'Ken', 'Skipper'];\ncharacters.forEach(character => console.log(character));",
+		"output": "Barbie\nKen\nSkipper"
+	},
+	{
+		"title": "ES6 Modules - Dynamic Import",
+		"description": "Dynamic imports allow you to import modules on demand.",
+		"example": "import('./barbieQuotes.js').then(module => {\n  console.log(module.default);\n});",
+		"output": "Logs the default export from the 'barbieQuotes.js' module"
 	}
 ]
