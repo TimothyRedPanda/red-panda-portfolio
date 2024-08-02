@@ -26,6 +26,7 @@ function CustomCursor() {
 				top: `${position.y}`,
 				pointerEvents: "none",
 			}}
+			className="opacity-0 md:opacity-100"
 		>
 			<title>Cursor</title>
 			<defs>
