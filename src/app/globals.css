@@ -32,6 +32,21 @@ body {
   font-style: normal;
 }
 
+.codeEditor {
+  width: 50vw;
+  height: 75vh;
+}
+
+@media (max-width: 768px) {
+  .codeEditor {
+    height: 50vh;
+  }
+  .coder {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .frog {
   transition: all 0.35s ease-in-out;
   position: absolute;

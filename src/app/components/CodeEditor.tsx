@@ -11,10 +11,9 @@ function CodeEditor() {
 	}
 
 	return (
-		<main className="p-6 flex flex-col gap-1 md:flex-row">
+		<main className="p-6 flex flex-col gap-1 md:flex-row coder">
 			<Editor
-				height="75vh"
-				width="50%"
+				className="codeEditor"
 				theme="vs-dark"
 				defaultLanguage="javascript"
 				defaultValue="// Type here for fun!"
