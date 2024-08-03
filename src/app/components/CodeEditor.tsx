@@ -1,35 +1,37 @@
-import { useState } from "react";
+"use client";
+import Editor from "@monaco-editor/react";
+import React, { useRef, useState, useEffect } from "react";
+import Output from "./Output";
 
 function CodeEditor() {
-	const [bold, setBold] = useState(false);
-	const [underline, setUnderline] = useState(false);
+	const [value, setValue] = useState("");
+
+	function onMount(editor) {
+		editor.focus;
+	}
+
 	return (
-		<main className="w-full h-full flex flex-col gap-1">
-			<h2>Text Editor</h2>
-			<section className="flex flex-col gap-1">
-				<button
-					type="button"
-					onClick={() => {
-						setBold(!bold);
-					}}
-				>
-					Bold
-				</button>
-				<button
-					type="button"
-					onClick={() => {
-						setUnderline(!underline);
-					}}
-				>
-					Underline
-				</button>
-				<input
-					className={`w-full h-full p-10 ${bold ? "font-thin" : "font-bold"} ${underline ? "underline" : null}`}
-					id="textField"
-					type="text"
-					defaultValue={"Text Field"}
-				/>
-			</section>
+		<main className="p-6 flex flex-col gap-1 md:flex-row">
+			<Editor
+				height="75vh"
+				width="50%"
+				theme="vs-dark"
+				defaultLanguage="javascript"
+				defaultValue="// Type here for fun!"
+				onMount={onMount}
+				onChange={(value) => setValue(value)}
+				options={{
+					cursorBlinking: "smooth",
+					acceptSuggestionOnEnter: "smart",
+					minimap: {
+						enabled: false
+					},
+					padding: {
+						top: 20,
+					}
+				}}
+			/>
+			<Output editorValue={value} />
 		</main>
 	);
 }

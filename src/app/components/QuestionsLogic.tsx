@@ -3,18 +3,12 @@ import questions from "../data/questions.json";
 import PrismLoader from "./PrismLoader";
 import { useState } from "react";
 
+interface QuestionsProps {
+	numb: number;
+}
 
-export default function Questions(props: { numb: number }) {
-	const alternateClass = (index: number) => {
-		if (questions.length === 1) {
-			return "bg-blue-400";
-		}
-		return index % 2 === 0
-			? "bg-blue-400 lg:translate-x-1/2 translate-x-0"
-			: "bg-amber-500 lg:translate-x-[-50%] translate-x-0";
-	};
-
-	const [index, setIndex] = useState(props.numb);
+export default function Questions({ numb }: QuestionsProps) {
+	const [index, setIndex] = useState(numb);
 
 	if (!questions[index]) {
 		return <h1 className="place-self-center text-3xl">Coming Soon</h1>;
