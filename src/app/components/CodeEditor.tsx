@@ -24,11 +24,11 @@ function CodeEditor() {
 					cursorBlinking: "smooth",
 					acceptSuggestionOnEnter: "smart",
 					minimap: {
-						enabled: false
+						enabled: false,
 					},
 					padding: {
 						top: 20,
-					}
+					},
 				}}
 			/>
 			<Output editorValue={value} />

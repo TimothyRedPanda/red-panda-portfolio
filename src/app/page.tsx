@@ -12,7 +12,14 @@ export default function Home() {
 				<RedPandaStudio />
 			</span>
 			<span className="grid grid-flow-row grid-cols-1 gap-10">
-				<p className="w-full place-content-center flex"><Link className="hover:underline hover:text-slate-500" href="/practice">Visit Code Fun to use a built in editor!</Link></p>
+				<p className="w-full place-content-center flex">
+					<Link
+						className="hover:underline hover:text-slate-500"
+						href="/practice"
+					>
+						Visit Code Fun to use a built in editor!
+					</Link>
+				</p>
 				<QuestionsLogic numb={randomNumb} />
 			</span>
 		</main>
