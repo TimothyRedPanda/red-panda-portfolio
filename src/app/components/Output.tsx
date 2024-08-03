@@ -26,13 +26,28 @@ function Output({ editorValue }) {
 	return (
 		<main className="w-1/2 gap-2 output">
 			<section className="flex justify-center w-full">
-				<button
-					onClick={runCode}
-					className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
-					type="button"
-				>
-					{isLoading ? "...running" : "Run"}
-				</button>
+				<section className="flex flex-cols gap-2">
+					<button
+						onClick={() => {
+							setRun(null);
+							runCode();
+						}}
+						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
+						type="button"
+					>
+						{isLoading ? "...running" : "Run"}
+					</button>
+					<button
+						onClick={() => {
+							setRun(null);
+							setIsError(false);
+						}}
+						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
+						type="button"
+					>
+						{isLoading ? "...running" : "clear"}
+					</button>
+				</section>
 			</section>
 			<div
 				className={`p-2 ${

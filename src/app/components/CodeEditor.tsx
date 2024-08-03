@@ -2,9 +2,12 @@
 import Editor from "@monaco-editor/react";
 import React, { useRef, useState, useEffect } from "react";
 import Output from "./Output";
+import questions from "../data/questions.json";
 
 function CodeEditor() {
-	const [value, setValue] = useState("");
+	const exampleCode =
+		questions[Math.floor(Math.random() * questions.length)].example;
+	const [value, setValue] = useState(exampleCode);
 
 	function onMount(editor) {
 		editor.focus;
@@ -16,7 +19,7 @@ function CodeEditor() {
 				className="codeEditor"
 				theme="vs-dark"
 				defaultLanguage="javascript"
-				defaultValue="// Type here for fun!"
+				defaultValue={value}
 				onMount={onMount}
 				onChange={(value) => setValue(value)}
 				options={{
