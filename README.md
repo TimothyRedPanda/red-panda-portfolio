@@ -54,6 +54,38 @@ Thanks again,
 
 Timothy (Red Panda Studios)
 
+## Favourite Features so far
+I am so proud of having implemented a worked code editor into the [Code Fun](https://www.red-panda.studio/practice) page of the project. Combining `Monoco React Editor` and `Pistion API` for code parsing. I am also using `Axios` to handle my API post requests to `Piston`. Feel free to play around with it and have fun.
+
+``` typescript
+import axios from "axios";
+
+const API = axios.create({
+	baseURL: "https://emkc.org/api/v2/piston",
+});
+
+async function executeCode(sourceCode) {
+	const response = await API.post("/execute", {
+		language: "js",
+		version: "18.15.0",
+		files: [
+			{
+				content: sourceCode,
+			},
+		],
+	});
+	return response.data;
+}
+
+export default executeCode;
+
+
+```
+To have a look at the error handling and such like please see this locations in the repo -
+
+* `src/app/components/CodeEditor` For the code editor itself logic.
+* `src/app/components/Output` For the the console output logic.
+
 ## Feel free to fork the project and have a play.
 
  `src/app/data` - Currently this is where I am keeping my data objects. I have questions/tips in here and my links for the contact section. The data for the questions is an array of objects in the following format (each field is required accept output which is optional). If the array is empty the page will render `Coming Soon`. The questions logic is being handled in `src/app/components/QuestionsLogic`. On page load it will render a random tip and there is a button for the user to randomise the tip again. But if the page cannot find a tip at the random index it is given it will render `Welcome (Refresh for a random tip)`
