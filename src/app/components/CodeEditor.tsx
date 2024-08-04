@@ -1,6 +1,6 @@
 "use client";
 import Editor from "@monaco-editor/react";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState } from "react";
 import Output from "./Output";
 import questions from "../data/questions.json";
 
@@ -8,11 +8,7 @@ function CodeEditor() {
 	const exampleCode =
 		questions[Math.floor(Math.random() * questions.length)].example;
 	const [value, setValue] = useState(exampleCode);
-	const [randomise, setRandomise] = useState(null);
-
-	function onMount(editor) {
-		editor.focus;
-	}
+	const [randomise, setRandomise] = useState("");
 
 	return (
 		<main className="p-6 flex flex-col gap-1 md:flex-row coder">
@@ -31,8 +27,7 @@ function CodeEditor() {
 					theme="vs-dark"
 					defaultLanguage="javascript"
 					defaultValue={value}
-					onMount={onMount}
-					onChange={(value) => setValue(value)}
+					onChange={(value) => setValue(value ? value : "")}
 					value={randomise ? randomise : value}
 					options={{
 						cursorBlinking: "smooth",
