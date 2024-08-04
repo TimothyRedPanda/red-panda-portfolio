@@ -18,9 +18,23 @@ export default function Questions({ numb }: QuestionsProps) {
 
 	return questions.length > 0 ? (
 		<section
-			className="flex flex-col text-1xl gap-1 p-4 rounded-xl shadow-questionShadow w-full md:w-3/4 place-self-center text-slate-950 bg-slate-50"
+			className="flex flex-col text-1xl gap-4 p-4 rounded-xl shadow-questionShadow w-full md:w-3/4 place-self-center text-slate-950 bg-slate-50"
 			key={title}
 		>
+			<button
+				className="bg-slate-950 text-slate-50 p-3 w-fit place-self-center rounded"
+				onClick={() => {
+					const newIndex = Math.floor(Math.random() * questions.length);
+					setIndex(
+						newIndex !== index
+							? newIndex
+							: Math.floor(Math.random() * questions.length),
+					);
+				}}
+				type="button"
+			>
+				Random Tip
+			</button>
 			<h2 className="text-center underline font-bold text-2xl">{title}</h2>
 			<p>{description}</p>
 			<pre className="code line-numbers p-2 text-xs md:text-base rounded-md">
@@ -37,20 +51,6 @@ export default function Questions({ numb }: QuestionsProps) {
 				</pre>
 			)}
 			<PrismLoader />
-			<button
-				className="bg-slate-950 text-slate-50 p-3 w-fit place-self-center rounded"
-				onClick={() => {
-					const newIndex = Math.floor(Math.random() * questions.length);
-					setIndex(
-						newIndex !== index
-							? newIndex
-							: Math.floor(Math.random() * questions.length),
-					);
-				}}
-				type="button"
-			>
-				Random Tip
-			</button>
 		</section>
 	) : (
 		<h1>Coming Soon</h1>

@@ -1,6 +1,7 @@
 "use client";
 import executeCode from "../api";
 import { useState } from "react";
+import questions from "../data/questions.json";
 
 function Output({ editorValue }) {
 	const [run, setRun] = useState(null);

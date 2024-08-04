@@ -26,7 +26,7 @@ export default function About() {
 				</Link>
 			</Paragraph>
 			<h2 className="p-5 underline font-bold">Glossary of terms</h2>
-			<GlossaryTable/>
+			<GlossaryTable />
 		</main>
 	);
 }
