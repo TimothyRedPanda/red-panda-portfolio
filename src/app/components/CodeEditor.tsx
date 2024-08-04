@@ -1,14 +1,22 @@
-"use client";
 import Editor from "@monaco-editor/react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Output from "./Output";
 import questions from "../data/questions.json";
 
 function CodeEditor() {
-	const exampleCode =
-		questions[Math.floor(Math.random() * questions.length)].example;
-	const [value, setValue] = useState(exampleCode);
-	const [randomise, setRandomise] = useState("");
+	const [value, setValue] = useState("");
+
+	useEffect(() => {
+		const randomCode =
+			questions[Math.floor(Math.random() * questions.length)].example;
+		setValue(randomCode);
+	}, []);
+
+	const handleRandomize = () => {
+		const newExample =
+			questions[Math.floor(Math.random() * questions.length)].example;
+		setValue(newExample);
+	};
 
 	return (
 		<main className="p-6 flex flex-col gap-1 md:flex-row coder">
@@ -17,7 +25,7 @@ function CodeEditor() {
 					<button
 						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
 						type="button"
-						onClick={() => setRandomise(exampleCode)}
+						onClick={handleRandomize}
 					>
 						Randomise Starter Code
 					</button>
@@ -26,9 +34,8 @@ function CodeEditor() {
 					className="codeEditor"
 					theme="vs-dark"
 					defaultLanguage="javascript"
-					defaultValue={value}
-					onChange={(value) => setValue(value ? value : "")}
-					value={randomise ? randomise : value}
+					value={value}
+					onChange={(value) => setValue(value ? value : "// Enter Code")}
 					options={{
 						cursorBlinking: "smooth",
 						acceptSuggestionOnEnter: "smart",

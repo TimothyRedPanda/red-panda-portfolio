@@ -1,10 +1,12 @@
-"use client";
 import executeCode from "../api";
 import { useState } from "react";
-import questions from "../data/questions.json";
 
-function Output({ editorValue }) {
-	const [run, setRun] = useState(null);
+interface OutputProps {
+	editorValue: string;
+}
+
+function Output({ editorValue }: OutputProps) {
+	const [run, setRun] = useState<null | []>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 
@@ -55,9 +57,9 @@ function Output({ editorValue }) {
 					isError ? "text-red-400 border-red-400 border-2" : "text-slate-50"
 				} rounded-md bg-slate-900 w-full p-3`}
 			>
-				{run
-					? run.map((item, index) => (
-							<span key={Math.floor(Math.random() * index)}>
+				{run !== null
+					? run.map((item: string, index: number) => (
+							<span key={Math.floor(Math.random() + index)}>
 								{item}
 								<br />
 							</span>
