@@ -58,12 +58,15 @@ function Output({ editorValue }: OutputProps) {
 				} rounded-md bg-slate-900 w-full p-3`}
 			>
 				{run !== null
-					? run.map((item: string, index: number) => (
-							<span key={Math.floor(Math.random() + index)}>
-								{item}
-								<br />
-							</span>
-						))
+					? run.map((item: string, index: number) => {
+							const key = index + 1;
+							return (
+								<span key={key}>
+									{item}
+									<br />
+								</span>
+							);
+						})
 					: "Click run to run code!"}
 			</div>
 		</main>
