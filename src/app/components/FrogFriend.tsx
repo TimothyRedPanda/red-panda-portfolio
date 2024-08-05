@@ -1,105 +1,31 @@
 "use client";
 import { useState } from "react";
-const colors = [
-	"#9aa861",
-	"#000000",
-	"#be0027",
-	"#cf8d2e",
-	"#e4e932",
-	"#2c9f45",
-	"#371777",
-	"#52325d",
-	"#511378",
-	"#f26f3c",
-	"#7c4dff",
-	"#34a853",
-	"#e9c46a",
-	"#8c52ff",
-	"#d33682",
-	"#26b775",
-	"#9e9e9e",
-	"#ff5733",
-	"#c70039",
-	"#007bff",
-	"#ffcd00",
-	"#008000",
-	"#808080",
-	"#ffa500",
-	"#800080",
-	"#00ffff",
-	"#800000",
-	"#ff00ff",
-	"#008080",
-	"#ff0000",
-	"#ffff00",
-	"#00ff00",
-	"#ffffff",
-	"#9932cc",
-	"#8b4513",
-	"#a0522d",
-	"#c0c0c0",
-	"#808000",
-	"#ffd700",
-	"#daa520",
-	"#000080",
-	"#800080",
-	"#fa8072",
-	"#f0ffff",
-	"#f0f8ff",
-	"#faebd7",
-	"#fff0f5",
-	"#ffe4c4",
-	"#ffdab9",
-	"#fff8dc",
-	"#f0e68c",
-	"#ffefd5",
-	"#ffffe0",
-	"#f5f5dc",
-	"#ddd8d9",
-	"#fffafa",
-	"#f0fff0",
-	"#dcdcdc",
-	"#fff5ee",
-	"#f5f5f5",
-	"#faf0e6",
-	"#87ceeb",
-	"#b0c4de",
-	"#add8e6",
-	"#afeeee",
-	"#b0e0e6",
-	"#87cefa",
-	"#00ced1",
-	"#40e0d0",
-	"#48d1cc",
-	"#20b2aa",
-	"#7fffd4",
-	"#66cdda",
-	"#008b8b",
-	"#87ceeb",
-	"#5f9ea0",
-	"#4682b4",
-	"#b0c4de",
-	"#add8e6",
-];
+
+interface target {
+	target: {
+		value: string;
+	};
+}
 
 const FrogFriend = () => {
-	const [color, setColor] = useState(colors[0]);
+	const [color, setColor] = useState("");
 
-	const colorChanger = () => {
-		const randNumb = Math.floor(Math.random() * colors.length);
-		color === colors[randNumb]
-			? setColor(colors[Math.floor(Math.random() * colors.length)])
-			: setColor(colors[randNumb]);
+	const changeColor = (e: target) => {
+		setColor(`${e.target.value}`);
 	};
 
 	return (
-		<button type="button" onClick={colorChanger}>
+		<main className="frog hidden md:flex">
+			<input
+				className="rounded-full bg-transparent opacity-0 bottom-5 absolute w-full h-full cursor-pointer"
+				type="color"
+				onChange={changeColor}
+			/>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				id="Layer_1"
 				viewBox="0 0 200.1 202.86"
 				width={"100px"}
-				className="frog"
 			>
 				<title>Frog</title>
 				<defs>
@@ -176,7 +102,7 @@ const FrogFriend = () => {
 					</g>
 				</g>
 			</svg>
-		</button>
+		</main>
 	);
 };
 export default FrogFriend;

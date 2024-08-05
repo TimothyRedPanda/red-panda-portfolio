@@ -50,11 +50,14 @@ body {
 .frog {
   transition: all 0.35s ease-in-out;
   position: absolute;
-  top: 95%;
+  flex-flow: column;
+  gap: 0;
+  align-items: center;
+  bottom: -6%;
 }
 
 .frog:hover {
-  top: 91%;
+  bottom: -2%;
 }
 
 .logo > * > *,
