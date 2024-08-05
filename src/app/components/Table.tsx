@@ -1,36 +1,70 @@
 "use client";
 import { z } from "zod";
 import DOMPurify from "dompurify";
-import questions from "../data/questions.json";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { fetchData } from "../lib/fetchData"; // Adjust the import path as needed
+
+interface Data {
+	title: string;
+	description: string;
+	example: string;
+	output: string;
+}
 
 const GlossaryTable = () => {
-	const [filter, setFilter] = useState("");
-	const [numberResults, setNumberResults] = useState("");
+	const [filter, setFilter] = useState<string>("");
+	const [numberResults, setNumberResults] = useState<string>("");
+	const [questions, setQuestions] = useState<Data[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const fetchDataFromSupabase = async () => {
+			try {
+				const data = await fetchData("javascripttips");
+				setQuestions(data);
+				setLoading(false);
+			} catch (err) {
+				console.error("Error fetching data:", err);
+				setError("Failed to fetch data.");
+				setLoading(false);
+			}
+		};
+
+		fetchDataFromSupabase();
+	}, []);
 
 	const filteredQuestions = questions.filter((item) => {
 		return filter
 			? item.title.toLowerCase().includes(filter.toLowerCase())
-			: null;
+			: true; // Use `true` to include all items when no filter is applied
 	});
 
 	const userInput = z.string().trim();
 
-	interface handleSelectchange {
+	interface HandleSelectChange {
 		target: { value: string };
 	}
 
-	const handleSelectChange = (event: handleSelectchange) => {
+	const handleSelectChange = (event: HandleSelectChange) => {
 		try {
 			userInput.parse(event.target.value);
 		} catch (error) {
-			console.error("That ain't a string, validation error", error);
+			console.error("Validation error", error);
 			return;
 		}
 
 		const sanitizeInput = DOMPurify.sanitize(event.target.value);
 		setFilter(sanitizeInput);
 	};
+
+	if (loading) {
+		return <h1 className="place-self-center text-3xl">Loading...</h1>;
+	}
+
+	if (error) {
+		return <h1 className="place-self-center text-3xl">{error}</h1>;
+	}
 
 	return (
 		<main className="w-screen p-4 md:p-10">
@@ -46,7 +80,7 @@ const GlossaryTable = () => {
 				<input
 					className="p-2"
 					type="text"
-					defaultValue="search..."
+					placeholder="Search..."
 					onChange={handleSelectChange}
 				/>
 				<p className="h-full flex items-center">
@@ -92,6 +126,6 @@ const GlossaryTable = () => {
 			)}
 		</main>
 	);
-}
+};
 
 export default GlossaryTable;

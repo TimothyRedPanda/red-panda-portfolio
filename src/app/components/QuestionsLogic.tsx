@@ -1,31 +1,73 @@
-"use client";
-import questions from "../data/questions.json";
+"client";
+import { useEffect, useState } from "react";
+import { fetchData } from "../lib/fetchData"; // Adjust the import path as needed
 import PrismLoader from "./PrismLoader";
-import { useState } from "react";
 
 interface QuestionsProps {
 	numb: number;
 }
 
-const Questions = ({ numb }: QuestionsProps) => {
-	const [index, setIndex] = useState(numb);
+interface Data {
+	title: string;
+	description: string;
+	example: string;
+	output: string;
+}
 
-	if (!questions[index]) {
-		return <h1 className="place-self-center text-3xl">Coming Soon</h1>;
-	}
+const Questions = ({ numb }: QuestionsProps) => {
+	const [questions, setQuestions] = useState<Data[]>([]);
+	const [index, setIndex] = useState(numb);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
+
+	useEffect(() => {
+		const fetchDataFromSupabase = async () => {
+			try {
+				const data = await fetchData("javascripttips");
+				setQuestions(data);
+				setLoading(false);
+			} catch (err) {
+				console.error("Error fetching data:", err);
+				setError("Failed to fetch data.");
+				setLoading(false);
+			}
+		};
+
+		fetchDataFromSupabase();
+	}, []);
 
 	const changeIndex = () => {
-		const newIndex = Math.floor(Math.random() * questions.length);
-		setIndex(
-			newIndex !== index
-				? newIndex
-				: Math.floor(Math.random() * questions.length),
-		);
+		if (questions.length > 0) {
+			const newIndex = Math.floor(Math.random() * questions.length);
+			setIndex(
+				newIndex !== index
+					? newIndex
+					: Math.floor(Math.random() * questions.length),
+			);
+		}
 	};
+
+	if (loading) {
+		return <h1 className="place-self-center text-3xl">I'm loading okay!!!</h1>;
+	}
+
+	if (error) {
+		return (
+			<h1 className="place-self-center text-3xl">{`This is the error I got : ${error}`}</h1>
+		);
+	}
+
+	if (!questions[index]) {
+		return (
+			<h1 className="place-self-center text-3xl">
+				Something new this way comes,{" "}
+			</h1>
+		);
+	}
 
 	const { title, description, example, output } = questions[index];
 
-	return questions.length > 0 ? (
+	return (
 		<section
 			className="flex flex-col text-1xl gap-4 p-4 rounded-xl shadow-questionShadow w-full md:w-3/4 place-self-center text-slate-950 bg-slate-50"
 			key={title}
@@ -54,8 +96,7 @@ const Questions = ({ numb }: QuestionsProps) => {
 			)}
 			<PrismLoader />
 		</section>
-	) : (
-		<h1>Coming Soon</h1>
 	);
 };
+
 export default Questions;

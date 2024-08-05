@@ -1,22 +1,55 @@
 import Editor from "@monaco-editor/react";
 import React, { useState, useEffect } from "react";
 import Output from "./Output";
-import questions from "../data/questions.json";
+import { fetchData } from "../lib/fetchData"; // Adjust the import path as needed
+
+interface Data {
+	title: string;
+	description: string;
+	example: string;
+	output: string;
+}
 
 const CodeEditor = () => {
 	const [value, setValue] = useState("");
+	const [questions, setQuestions] = useState<Data[]>([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
 
 	useEffect(() => {
-		const randomCode =
-			questions[Math.floor(Math.random() * questions.length)].example;
-		setValue(randomCode);
+		const fetchDataFromSupabase = async () => {
+			try {
+				const data = await fetchData("javascripttips");
+				setQuestions(data);
+				const randomCode =
+					data[Math.floor(Math.random() * data.length)].example;
+				setValue(randomCode);
+				setLoading(false);
+			} catch (err) {
+				console.error("Error fetching data:", err);
+				setError("Failed to fetch data.");
+				setLoading(false);
+			}
+		};
+
+		fetchDataFromSupabase();
 	}, []);
 
 	const handleRandomize = () => {
-		const newExample =
-			questions[Math.floor(Math.random() * questions.length)].example;
-		setValue(newExample);
+		if (questions.length > 0) {
+			const newExample =
+				questions[Math.floor(Math.random() * questions.length)].example;
+			setValue(newExample);
+		}
 	};
+
+	if (loading) {
+		return <h1 className="place-self-center text-3xl">Loading...</h1>;
+	}
+
+	if (error) {
+		return <h1 className="place-self-center text-3xl">{error}</h1>;
+	}
 
 	return (
 		<main className="p-6 flex flex-col gap-1 md:flex-row coder">
@@ -51,6 +84,6 @@ const CodeEditor = () => {
 			<Output editorValue={value} />
 		</main>
 	);
-}
+};
 
 export default CodeEditor;
