@@ -1,11 +1,16 @@
-// lib/supabaseClient.ts
 import { createClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+const supabaseServiceRoleKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
+console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
+console.log(
+	"Service Role Key:",
+	process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? "Available" : "Not Available",
+);
+
+if (!supabaseUrl || !supabaseServiceRoleKey) {
 	throw new Error("Missing Supabase URL or Key in environment variables");
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+export const supabase = createClient(supabaseUrl, supabaseServiceRoleKey);
