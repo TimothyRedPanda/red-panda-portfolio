@@ -68,7 +68,7 @@ const CodeEditor = () => {
 					theme="vs-dark"
 					defaultLanguage="javascript"
 					value={value}
-					onChange={(value) => setValue(value ? value : "// Enter Code")}
+					onChange={(value) => setValue(value ? value : "")}
 					options={{
 						cursorBlinking: "smooth",
 						acceptSuggestionOnEnter: "smart",
