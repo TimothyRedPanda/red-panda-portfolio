@@ -21,12 +21,12 @@ Welcome to Red Panda Studio's portfolio/learning platform.
 
 This is a place for me (Timothy) to create a Next.js website
 that I can be proud of and help other developers thrive.
-I will continuously add tips, tricks, and a place to express
+I will continuously be adding tips and tricks and this is a place to express
 myself through my coding adventures.
-Thank you for taking a look, and I hope you stick around and grow this page.
+Thank you for taking a look, and I hope you stick around as I grow this page.
 Feel
-free to look at the codebase, fork it or whatever takes your fancy.
-This is all about enjoying this developer's journey.
+free to poke around in the codebase.
+This is all about enjoying the developer journey.
 Thanks again,
 
 Timothy (Red Panda Studios)
