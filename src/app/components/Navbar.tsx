@@ -3,8 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-export default function Navbar() {
-	const [open, setOpen] = useState(false);
+const Navbar = () => {
+	const [open, setOpen] = useState(true);
 	const pathName = usePathname();
 
 	const hrefs = [
@@ -49,4 +49,5 @@ export default function Navbar() {
 			</button>
 		</nav>
 	);
-}
+};
+export default Navbar;

@@ -4,7 +4,7 @@ import DOMPurify from "dompurify";
 import questions from "../data/questions.json";
 import { useState } from "react";
 
-function GlossaryTable() {
+const GlossaryTable = () => {
 	const [filter, setFilter] = useState("");
 	const [numberResults, setNumberResults] = useState("");
 

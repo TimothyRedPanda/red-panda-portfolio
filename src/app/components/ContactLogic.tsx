@@ -1,7 +1,7 @@
 import listItems from "../data/contactList.json";
 import Link from "next/link";
 
-export default function ContactLogic() {
+const ContactLogic = () => {
 	return (
 		<ul className="flex-col flex gap-4 p-2">
 			{listItems.length > 0 ? (
@@ -25,4 +25,5 @@ export default function ContactLogic() {
 			<li>Email : timothy@chewedleashphotography.com</li>
 		</ul>
 	);
-}
+};
+export default ContactLogic;

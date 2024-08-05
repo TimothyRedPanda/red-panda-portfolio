@@ -4,7 +4,7 @@ import QuestionsLogic from "./components/QuestionsLogic";
 import questions from "./data/questions.json";
 import Link from "next/link";
 
-export default function Home() {
+const Home = () => {
 	const randomNumb = Math.floor(Math.random() * questions.length);
 	return (
 		<main className="p-3 gap-6 flex flex-col">
@@ -24,4 +24,6 @@ export default function Home() {
 			</span>
 		</main>
 	);
-}
+};
+
+export default Home;

@@ -1,7 +1,7 @@
 "use client";
 import CodeEditor from "../components/CodeEditor";
 
-function Practice() {
+const Practice = () => {
 	return (
 		<main className="w-dvw h-dvh">
 			<CodeEditor />

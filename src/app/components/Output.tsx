@@ -5,12 +5,12 @@ interface OutputProps {
 	editorValue: string;
 }
 
-function Output({ editorValue }: OutputProps) {
+const Output = ({ editorValue }: OutputProps) => {
 	const [run, setRun] = useState<null | []>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 
-	async function runCode() {
+	const runCode = async () => {
 		const sourceCode = editorValue;
 		if (!sourceCode) return;
 
@@ -24,27 +24,31 @@ function Output({ editorValue }: OutputProps) {
 		} finally {
 			setIsLoading(false);
 		}
-	}
+	};
+
+	const runOutput = () => {
+		setRun(null);
+		runCode();
+	};
+
+	const clearOutput = () => {
+		setRun(null);
+		setIsError(false);
+	};
 
 	return (
 		<main className="w-1/2 gap-2 output">
 			<section className="flex justify-center w-full">
 				<section className="flex flex-cols gap-2">
 					<button
-						onClick={() => {
-							setRun(null);
-							runCode();
-						}}
+						onClick={runOutput}
 						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
 						type="button"
 					>
 						{isLoading ? "...running" : "Run"}
 					</button>
 					<button
-						onClick={() => {
-							setRun(null);
-							setIsError(false);
-						}}
+						onClick={clearOutput}
 						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
 						type="button"
 					>
@@ -71,6 +75,6 @@ function Output({ editorValue }: OutputProps) {
 			</div>
 		</main>
 	);
-}
+};
 
 export default Output;

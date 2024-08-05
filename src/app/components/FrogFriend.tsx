@@ -85,12 +85,12 @@ const colors = [
 const FrogFriend = () => {
 	const [color, setColor] = useState(colors[0]);
 
-	function colorChanger() {
+	const colorChanger = () => {
 		const randNumb = Math.floor(Math.random() * colors.length);
 		color === colors[randNumb]
 			? setColor(colors[Math.floor(Math.random() * colors.length)])
 			: setColor(colors[randNumb]);
-	}
+	};
 
 	return (
 		<button type="button" onClick={colorChanger}>

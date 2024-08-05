@@ -3,7 +3,7 @@ import Link from "next/link";
 import Title from "../components/Title";
 import GlossaryTable from "../components/Table";
 
-export default function About() {
+const About = () => {
 	const aboutTitle: string = "About Red Panda Studio";
 	const paraText =
 		"Well, hello there. " +
@@ -29,4 +29,5 @@ export default function About() {
 			<GlossaryTable />
 		</main>
 	);
-}
+};
+export default About;

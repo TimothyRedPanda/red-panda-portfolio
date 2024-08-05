@@ -7,12 +7,21 @@ interface QuestionsProps {
 	numb: number;
 }
 
-export default function Questions({ numb }: QuestionsProps) {
+const Questions = ({ numb }: QuestionsProps) => {
 	const [index, setIndex] = useState(numb);
 
 	if (!questions[index]) {
 		return <h1 className="place-self-center text-3xl">Coming Soon</h1>;
 	}
+
+	const changeIndex = () => {
+		const newIndex = Math.floor(Math.random() * questions.length);
+		setIndex(
+			newIndex !== index
+				? newIndex
+				: Math.floor(Math.random() * questions.length),
+		);
+	};
 
 	const { title, description, example, output } = questions[index];
 
@@ -23,14 +32,7 @@ export default function Questions({ numb }: QuestionsProps) {
 		>
 			<button
 				className="bg-slate-950 text-slate-50 p-3 w-fit place-self-center rounded"
-				onClick={() => {
-					const newIndex = Math.floor(Math.random() * questions.length);
-					setIndex(
-						newIndex !== index
-							? newIndex
-							: Math.floor(Math.random() * questions.length),
-					);
-				}}
+				onClick={changeIndex}
 				type="button"
 			>
 				Random Tip
@@ -55,4 +57,5 @@ export default function Questions({ numb }: QuestionsProps) {
 	) : (
 		<h1>Coming Soon</h1>
 	);
-}
+};
+export default Questions;

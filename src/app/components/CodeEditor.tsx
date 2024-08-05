@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Output from "./Output";
 import questions from "../data/questions.json";
 
-function CodeEditor() {
+const CodeEditor = () => {
 	const [value, setValue] = useState("");
 
 	useEffect(() => {
