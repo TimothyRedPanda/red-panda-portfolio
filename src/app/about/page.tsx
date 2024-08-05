@@ -12,7 +12,7 @@ const About = () => {
 		" my coding journey but also to help other developers thrive " +
 		"as well. I will be sharing tips, tricks, and other words of" +
 		" wisdom from this noggin. Thanks for taking a look and watch " +
-		"this space as I expanda it. If you have any questions, then " +
+		"this space as I expand it. If you have any questions, then " +
 		"head over to ";
 
 	return (
