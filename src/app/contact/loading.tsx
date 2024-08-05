@@ -1,9 +1,5 @@
 const Loading = () => {
-	return (
-		<main className="grid place-items-center">
-			<h1>Just loading for ya...</h1>
-		</main>
-	);
+	return <h1 className="w-screen text-center text-3xl">Loading...</h1>;
 };
 
 export default Loading;

@@ -42,15 +42,15 @@ const Home = () => {
 	}, []);
 
 	if (loading) {
-		return <h1 className="place-self-center text-3xl">Loading...</h1>;
+		return <h1 className="w-screen text-center text-3xl">Loading...</h1>;
 	}
 
 	if (error) {
-		return <h1 className="place-self-center text-3xl">{error}</h1>;
+		return <h1 className="w-screen text-center text-3xl">{error}</h1>;
 	}
 
 	if (questions.length === 0 || randomNumb === null) {
-		return <h1 className="place-self-center text-3xl">Coming Soon</h1>;
+		return <h1 className="w-screen text-center text-3xl">Coming Soon</h1>;
 	}
 
 	return (

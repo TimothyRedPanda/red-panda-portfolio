@@ -48,12 +48,14 @@ const Questions = ({ numb }: QuestionsProps) => {
 	};
 
 	if (loading) {
-		return <h1 className="place-self-center text-3xl">I'm loading okay!!!</h1>;
+		return (
+			<h1 className="w-screen text-center text-3xl">I'm loading okay!!!</h1>
+		);
 	}
 
 	if (error) {
 		return (
-			<h1 className="place-self-center text-3xl">{`This is the error I got : ${error}`}</h1>
+			<h1 className="w-screen text-center text-3xl">{`This is the error I got : ${error}`}</h1>
 		);
 	}
 
