@@ -1,4 +1,4 @@
-import executeCode from "../api";
+import executeCode from "../lib/piston_request";
 import { useState } from "react";
 
 interface OutputProps {
