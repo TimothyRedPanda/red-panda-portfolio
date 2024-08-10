@@ -21,6 +21,11 @@ body {
   font-style: normal;
 }
 
+.outlined {
+  font-family: inherit;
+  font-size: 10rem;
+}
+
 .output {
   display: grid;
   grid-template-rows: auto 1fr;
