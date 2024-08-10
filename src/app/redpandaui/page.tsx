@@ -3,6 +3,7 @@ import { Button } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
 import PrismLoader from "../components/PrismLoader";
 import Link from "next/link";
+import { useState } from "react";
 
 const buttonCode = `// Examples of how these Buttons are being used on this very page.
 //onClick and className are optional props.
@@ -19,13 +20,16 @@ const ExampleUI = () => {
 				<Button className="outlined">Outlined</Button>
 				<Button className="contained">Contained</Button>
 				<Button className="disabled">Disabled</Button>
-				<Button onClick={() => console.log("Clicked!")}>onClick Example</Button>
+				<Button onClick={() => setClicked(clicked + 1)}>
+					Clicked: {clicked}
+				</Button>
 			</section>
 		</main>
 	);
 };`;
 
 const ExampleUI = () => {
+	const [clicked, setClicked] = useState(0);
 	return (
 		<main className="w-dvw h-dvh gap-4 flex flex-col items-center mt-10">
 			<pre>
@@ -42,7 +46,9 @@ const ExampleUI = () => {
 				<Button className="outlined">Outlined</Button>
 				<Button className="contained">Contained</Button>
 				<Button className="disabled">Disabled</Button>
-				<Button onClick={() => console.log("Clicked!")}>onClick Example</Button>
+				<Button onClick={() => setClicked(clicked + 1)}>
+					Clicked: {clicked}
+				</Button>
 			</section>
 			<br />
 			<pre className="w-3/4">
