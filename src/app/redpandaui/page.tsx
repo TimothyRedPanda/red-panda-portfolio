@@ -42,6 +42,7 @@ const ExampleUI = () => {
 				<Button className="outlined">Outlined</Button>
 				<Button className="contained">Contained</Button>
 				<Button className="disabled">Disabled</Button>
+				<Button onClick={() => console.log("Clicked!")}>onClick Example</Button>
 			</section>
 			<br />
 			<pre className="w-3/4">
