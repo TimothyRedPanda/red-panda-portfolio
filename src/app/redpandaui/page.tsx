@@ -10,14 +10,15 @@ const buttonCode = `// Examples of how these Buttons are being used on this very
 
 import { Button } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
+import { useState } from "react";
 
 const ExampleUI = () => {	
-
+const [clicked, setClicked] = useState(0);
 return (
 <main className="w-dvw h-dvh flex flex-col items-center mt-10">
 	<section className="flex items-center flex-col md:flex-row gap-1 border-4 p-5 shadow-questionShadow">
 		<h1>Example Buttons:</h1>
-		<Button>Default</Button>
+		<Button onClick={() => setClick(0)}>Default</Button>
 		<Button className="outlined" onClick={() => setClicked(clicked + 1)}>
 			Outlined
 		</Button>
@@ -47,7 +48,7 @@ const ExampleUI = () => {
 			</pre>
 			<section className="flex items-center justify-around gap-5 flex-col md:flex-row border-4 border-slate-300 p-5 shadow-questionShadow w-3/4 rounded-md">
 				<h1>Example Buttons:</h1>
-				<Button onClick={() => setClicked(clicked + 1)}>Default</Button>
+				<Button onClick={() => setClicked(0)}>Default</Button>
 				<Button className="outlined" onClick={() => setClicked(clicked + 1)}>
 					Outlined
 				</Button>
