@@ -76,9 +76,9 @@ const Questions = ({ numb }: QuestionsProps) => {
 			className="flex flex-col text-1xl gap-4 p-4 rounded-xl shadow-questionShadow w-full md:w-3/4 place-self-center text-slate-950 bg-slate-50"
 			key={title}
 		>
-			<Button className="contained" onClick={changeIndex}>
-				Random Tip
-			</Button>
+			<span className="w-full flex justify-center">
+				<Button onClick={changeIndex}>Random Tip</Button>
+			</span>
 			<h2 className="text-center underline font-bold text-2xl">{title}</h2>
 			<p>{description}</p>
 			<pre className="code line-numbers p-2 text-xs md:text-base rounded-md">

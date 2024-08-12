@@ -89,7 +89,7 @@ body {
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 0) 0%,
-    rgb(0, 0, 0) 50%,
+    rgb(255, 194, 25) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transition: all 1s ease-in-out;
@@ -97,4 +97,5 @@ body {
 
 .wrapper:hover .divider {
   width: 100%;
+  opacity: 100%;
 }

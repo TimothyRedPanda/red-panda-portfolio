@@ -57,9 +57,7 @@ const CodeEditor = () => {
 		<main className="p-6 flex flex-col gap-1 md:flex-row coder">
 			<span className="md:w-1/2 w-full flex gap-2 flex-col">
 				<span className="w-full flex place-content-center">
-					<Button className="outlined" onClick={handleRandomize}>
-						Randomise Starter Code
-					</Button>
+					<Button onClick={handleRandomize}>Randomise Starter Code</Button>
 				</span>
 				<Editor
 					className="codeEditor"

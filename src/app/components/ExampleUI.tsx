@@ -30,8 +30,8 @@ const ExampleUI = () => {
 					<Button className="contained">Contained</Button>
 					<Button className="disabled">Disabled</Button>
 				</section>
-				<span className="divide-wrap self-center w-full m-8 relative h-px">
-					<span className="divider absolute w-1/4 h-full" />
+				<span className="divide-wrap self-center w-full m-8 relative h-[1.5px]">
+					<span className="divider opacity-0 absolute w-px h-full" />
 				</span>
 				<pre className="w-full">
 					<code className="language-jsx">{buttonCode}</code>

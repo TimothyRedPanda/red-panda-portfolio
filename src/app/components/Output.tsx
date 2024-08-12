@@ -42,10 +42,10 @@ const Output = ({ editorValue }: OutputProps) => {
 		<main className="w-1/2 gap-2 output">
 			<section className="flex justify-center w-full">
 				<section className="flex flex-cols gap-2">
-					<Button onClick={runOutput} className="outlined">
+					<Button onClick={runOutput}>
 						{isLoading ? "...running" : "Run"}
 					</Button>
-					<Button onClick={clearOutput} className="outlined">
+					<Button onClick={clearOutput}>
 						{isLoading ? "...running" : "clear"}
 					</Button>
 				</section>
