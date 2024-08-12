@@ -13,6 +13,7 @@ const Navbar = () => {
 		{ href: "/contact", text: "Contact" },
 		{ href: "/practice", text: "Code Fun" },
 		{ href: "/redpandaui", text: "Red Panda UI" },
+		{ href: "/lotr", text: "Lord of the Rings" },
 	];
 
 	const hidden = !open;

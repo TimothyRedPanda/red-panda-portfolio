@@ -1,4 +1,4 @@
-import executeCode, { type ExecutionResult } from "../lib/piston_request";
+import executeCode, { type ExecutionResult } from "../../lib/piston_request";
 import { useState } from "react";
 import { Button } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";

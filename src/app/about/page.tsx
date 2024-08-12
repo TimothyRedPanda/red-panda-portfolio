@@ -1,7 +1,7 @@
 import Paragraph from "../components/Paragraph";
 import Link from "next/link";
 import Title from "../components/Title";
-import GlossaryTable from "../components/Table";
+import GlossaryTable from "../components/GlossaryTable/GLossaryTable";
 
 const About = () => {
 	const aboutTitle: string = "About Red Panda Studio";

@@ -1,20 +1,12 @@
-import Editor from "@monaco-editor/react";
 import React, { useState, useEffect } from "react";
-import Output from "./Output/Output";
-import { fetchData } from "../lib/fetchData";
-import { Button } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
-
-interface Data {
-	title: string;
-	description: string;
-	example: string;
-	output: string;
-}
+import { fetchData } from "../../lib/fetchData";
+import EditorComponent from "./EditorComponent";
+import RandomizeButton from "./RandomizeButton";
+import OutputComponent from "./OutputComponent";
 
 const CodeEditor = () => {
 	const [value, setValue] = useState("");
-	const [questions, setQuestions] = useState<Data[]>([]);
+	const [questions, setQuestions] = useState<{ example: string }[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<string | null>(null);
 
@@ -57,27 +49,11 @@ const CodeEditor = () => {
 		<main className="p-6 flex flex-col gap-1 md:flex-row coder">
 			<span className="md:w-1/2 w-full flex gap-2 flex-col">
 				<span className="w-full flex place-content-center">
-					<Button onClick={handleRandomize}>Randomise Starter Code</Button>
+					<RandomizeButton onClick={handleRandomize} />
 				</span>
-				<Editor
-					className="codeEditor"
-					theme="vs-dark"
-					defaultLanguage="javascript"
-					value={value}
-					onChange={(value) => setValue(value ? value : "")}
-					options={{
-						cursorBlinking: "smooth",
-						acceptSuggestionOnEnter: "smart",
-						minimap: {
-							enabled: false,
-						},
-						padding: {
-							top: 20,
-						},
-					}}
-				/>
+				<EditorComponent value={value} setValue={setValue} />
 			</span>
-			<Output editorValue={value} />
+			<OutputComponent editorValue={value} />
 		</main>
 	);
 };

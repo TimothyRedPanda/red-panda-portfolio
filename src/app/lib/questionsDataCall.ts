@@ -1,4 +1,4 @@
-import { fetchData } from "./lib/fetchData";
+import { fetchData } from "./fetchData";
 
 type Data = {
 	title: string;
@@ -7,7 +7,13 @@ type Data = {
 	output: string;
 };
 
-export default async function questions() {
+type Character = {
+	firstname: string;
+	lastname: string;
+	dob: string;
+};
+
+export async function questions(): Promise<Data[]> {
 	let questions: Data[] = [];
 
 	try {
@@ -15,4 +21,6 @@ export default async function questions() {
 	} catch (error) {
 		console.error("Error fetching data:", error);
 	}
+
+	return questions;
 }
