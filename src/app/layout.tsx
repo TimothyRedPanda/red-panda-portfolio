@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar/Navbar";
 import "./globals.css";
-import FrogFriend from "./components/FrogFriend";
+import FrogFriend from "./components/FrogFriend/FrogFriend";
 
 export const metadata: Metadata = {
 	title: "Let's learn!",

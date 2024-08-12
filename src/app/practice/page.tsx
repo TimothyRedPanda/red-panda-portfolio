@@ -1,5 +1,5 @@
 "use client";
-import CodeEditor from "../components/CodeEditor";
+import CodeEditor from "../components/CodeEditor/CodeEditor";
 
 const Practice = () => {
 	return (
@@ -7,6 +7,6 @@ const Practice = () => {
 			<CodeEditor />
 		</main>
 	);
-}
+};
 
 export default Practice;

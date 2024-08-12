@@ -1,4 +1,4 @@
-import listItems from "../data/contactList.json";
+import listItems from "../../data/contactList.json";
 import Link from "next/link";
 
 const ContactLogic = () => {

@@ -1,4 +1,4 @@
-import ExampleUI from "../components/ExampleUI";
+import ExampleUI from "../components/ExampleUI/ExampleUI";
 
 const RedPandaUI = () => {
 	return <ExampleUI />;

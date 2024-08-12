@@ -1,5 +1,5 @@
-import Title from "../components/Title";
-import ContactLogic from "../components/ContactLogic";
+import Title from "../components/Title/Title";
+import ContactLogic from "../components/ContactLogic/ContactLogic";
 
 const Contact = () => {
 	const contactTitle: string = "Contact";

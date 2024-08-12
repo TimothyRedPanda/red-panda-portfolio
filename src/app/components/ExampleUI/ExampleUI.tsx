@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
-import PrismLoader from "../components/PrismLoader";
+import PrismLoader from "../PrismLoader/PrismLoader";
 import Link from "next/link";
 
 const buttonCode = `<Button>Default</Button>

@@ -1,5 +1,5 @@
-import Paragraph from "../components/Paragraph";
-import Title from "../components/Title";
+import Paragraph from "../components/Paragraph/Paragraph";
+import Title from "../components/Title/Title";
 import CharacterTable from "../components/CharacterTable/CharacterTable";
 
 const Lotr = () => {

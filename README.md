@@ -32,7 +32,7 @@ Thanks again,
 Timothy (Red Panda Studios)
 
 ## Favourite Features so far
-I am so proud of having implemented a working code editor into the [Code Fun](https://www.red-panda.studio/practice) page of the project. Combining `Monoco React Editor` and `Piston API` for code parsing. I am also using `Axios` to handle my API post requests to `Piston`. Feel free to play around with it and have fun.
+I am so proud of having implemented a working code editor into the [Code Fun](https://www.red-panda.studio/practice) page of the project. Combining `Monoco React Editor` and `Piston API` for code parsing. I am also using `isomorphic-fetch` to handle my API post requests to `Piston`. Feel free to play around with it and have fun.
 
 ``` typescript
 import axios from "axios";
@@ -61,7 +61,7 @@ export default executeCode;
 To have a look at the error handling and such like please see this locations in the repo -
 
 * `src/app/components/CodeEditor` For the code editor itself logic.
-* `src/app/components/Output` For the the console output logic.
+* `src/app/components/Output/Output.tsx` For the the console output logic.
 
 
  Everything should be labelled relatively straight forwardly, but feel free to ask if you have any questions. In `src/app/components/PrismLoader.tsx` is the logic for handling the syntax highlighting. If you were interested:

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import RedPandaStudio from "./components/RedPandaStudio";
-import QuestionsLogic from "./components/QuestionsLogic";
+import RedPandaStudio from "./components/RedPandaStudio/RedPandaStudio";
+import QuestionsLogic from "./components/QuestionsLogic/QuestionsLogic";
 import Link from "next/link";
 import { fetchData } from "./lib/fetchData";
 

@@ -1,6 +1,6 @@
-import Paragraph from "../components/Paragraph";
+import Paragraph from "../components/Paragraph/Paragraph";
 import Link from "next/link";
-import Title from "../components/Title";
+import Title from "../components/Title/Title";
 import GlossaryTable from "../components/GlossaryTable/GLossaryTable";
 
 const About = () => {
