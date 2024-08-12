@@ -1,12 +1,14 @@
-import executeCode from "../lib/piston_request";
+import executeCode, { type ExecutionResult } from "../lib/piston_request";
 import { useState } from "react";
+import { Button } from "ui-redpanda";
+import "ui-redpanda/dist/style.css";
 
 interface OutputProps {
 	editorValue: string;
 }
 
 const Output = ({ editorValue }: OutputProps) => {
-	const [run, setRun] = useState<null | []>(null);
+	const [run, setRun] = useState<null | string[]>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isError, setIsError] = useState(false);
 
@@ -16,7 +18,7 @@ const Output = ({ editorValue }: OutputProps) => {
 
 		try {
 			setIsLoading(true);
-			const { run: result } = await executeCode(sourceCode);
+			const { run: result }: ExecutionResult = await executeCode(sourceCode);
 			setRun(result.output.split("\n"));
 			result.stderr ? setIsError(true) : setIsError(false);
 		} catch (error) {
@@ -40,20 +42,12 @@ const Output = ({ editorValue }: OutputProps) => {
 		<main className="w-1/2 gap-2 output">
 			<section className="flex justify-center w-full">
 				<section className="flex flex-cols gap-2">
-					<button
-						onClick={runOutput}
-						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
-						type="button"
-					>
+					<Button onClick={runOutput} className="outlined">
 						{isLoading ? "...running" : "Run"}
-					</button>
-					<button
-						onClick={clearOutput}
-						className="w-fit bg-slate-700 hover:bg-slate-500 pt-1 pb-1 pl-3 pr-3 rounded-sm text-slate-50 button"
-						type="button"
-					>
+					</Button>
+					<Button onClick={clearOutput} className="outlined">
 						{isLoading ? "...running" : "clear"}
-					</button>
+					</Button>
 				</section>
 			</section>
 			<div

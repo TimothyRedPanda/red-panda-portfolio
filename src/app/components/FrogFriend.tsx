@@ -15,7 +15,7 @@ const FrogFriend = () => {
 	};
 
 	return (
-		<main className="frog hidden md:flex">
+		<main className="frog hidden md:flex md:flex-col md:absolute md:gap-0 md:items-center">
 			<input
 				className="rounded-full bg-transparent opacity-0 bottom-5 absolute w-full h-full cursor-pointer"
 				type="color"

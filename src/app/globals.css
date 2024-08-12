@@ -21,11 +21,6 @@ body {
   font-style: normal;
 }
 
-.outlined {
-  font-family: inherit;
-  font-size: 10rem;
-}
-
 .output {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -54,10 +49,6 @@ body {
 
 .frog {
   transition: all 0.35s ease-in-out;
-  position: absolute;
-  flex-flow: column;
-  gap: 0;
-  align-items: center;
   bottom: -6%;
 }
 
@@ -83,4 +74,27 @@ body {
 
 .logo:hover > * > * > .cls-2 {
   fill: #0f0f0f;
+}
+
+.divide-wrap {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    hsla(0, 0%, 0%, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.divider {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(0, 0, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 1s ease-in-out;
+}
+
+.wrapper:hover .divider {
+  width: 100%;
 }

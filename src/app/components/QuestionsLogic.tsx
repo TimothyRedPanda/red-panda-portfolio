@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "../lib/fetchData"; // Adjust the import path as needed
 import PrismLoader from "./PrismLoader";
+import { Button } from "ui-redpanda";
+import "ui-redpanda/dist/style.css";
 
 interface QuestionsProps {
 	numb: number;
@@ -74,13 +76,9 @@ const Questions = ({ numb }: QuestionsProps) => {
 			className="flex flex-col text-1xl gap-4 p-4 rounded-xl shadow-questionShadow w-full md:w-3/4 place-self-center text-slate-950 bg-slate-50"
 			key={title}
 		>
-			<button
-				className="bg-slate-950 text-slate-50 p-3 w-fit place-self-center rounded"
-				onClick={changeIndex}
-				type="button"
-			>
+			<Button className="contained" onClick={changeIndex}>
 				Random Tip
-			</button>
+			</Button>
 			<h2 className="text-center underline font-bold text-2xl">{title}</h2>
 			<p>{description}</p>
 			<pre className="code line-numbers p-2 text-xs md:text-base rounded-md">

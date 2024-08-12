@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import RedPandaStudio from "./components/RedPandaStudio";
 import QuestionsLogic from "./components/QuestionsLogic";
 import Link from "next/link";
-import { fetchData } from "./lib/fetchData"; // Adjust the import path as needed
+import { fetchData } from "./lib/fetchData";
 
 interface Data {
 	title: string;
