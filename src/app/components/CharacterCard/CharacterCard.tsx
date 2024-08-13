@@ -10,9 +10,14 @@ const CharacterTable = () => {
 	const [numberResults, setNumberResults] = useState<string>("");
 
 	const filteredCharacters = characters.filter((item) => {
+		const firstname = item.firstname?.toLowerCase() || "";
+		const lastname = item.lastname?.toLowerCase() || "";
+		const race = item.race?.toLowerCase() || "";
+
 		return filter
-			? item.firstname.toLowerCase().includes(filter.toLowerCase()) ||
-					item.lastname.toLowerCase().includes(filter.toLowerCase())
+			? firstname.includes(filter.toLowerCase()) ||
+					lastname.includes(filter.toLowerCase()) ||
+					race.includes(filter.toLowerCase())
 			: true;
 	});
 
@@ -25,14 +30,13 @@ const CharacterTable = () => {
 	}
 
 	return (
-		<main className="w-[75vw] place-content-center p-4 md:p-10">
+		<main className="w-[90vw] place-content-center p-4 md:p-10">
 			<CharacterFilter
 				setFilter={setFilter}
 				characters={characters}
 				filteredCharacters={filteredCharacters}
 				numberResults={numberResults}
 			/>
-			<br />
 			<CharacterList characters={filteredCharacters} />
 		</main>
 	);

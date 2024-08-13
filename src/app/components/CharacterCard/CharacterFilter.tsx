@@ -5,7 +5,11 @@ import { capitalizeWords } from "../../../utils/capitalizeWords";
 interface Character {
 	firstname: string;
 	lastname: string;
+	race: string;
 	dob: string;
+	title: string;
+	description: string;
+	uuid: string;
 }
 
 interface CharacterFilterProps {
@@ -40,14 +44,14 @@ const CharacterFilter = ({
 	};
 
 	return (
-		<span className="w-full flex-row gap-2  md:flex hidden">
+		<span className="w-full flex-row gap-2 flex">
 			<select className="py-2 px-4" onChange={handleSelectChange}>
 				<option value="" className="py-2 px-4">
 					All
 				</option>
 				{characters.map((option) => (
 					<option
-						key={option.firstname}
+						key={option.uuid}
 						className="py-2 px-4"
 						value={option.firstname}
 					>
@@ -61,7 +65,7 @@ const CharacterFilter = ({
 				placeholder="Search..."
 				onChange={handleSelectChange}
 			/>
-			<p className="h-full flex items-center">
+			<p className="h-full md:flex items-center hidden">
 				{filteredCharacters.length > 0
 					? `${filteredCharacters.length} items found`
 					: numberResults}

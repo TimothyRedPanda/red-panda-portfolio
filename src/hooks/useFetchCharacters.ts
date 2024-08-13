@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, cache } from "react";
 import { fetchData } from "../../src/app/lib/fetchData";
 
 interface Character {
 	firstname: string;
 	lastname: string;
+	race: string;
 	dob: string;
+	title: string;
+	description: string;
+	uuid: string;
 }
 
 export const useFetchCharacters = () => {
@@ -18,8 +22,9 @@ export const useFetchCharacters = () => {
 				const data = await fetchData("characters");
 				setCharacters(data);
 				setLoading(false);
-			} catch (err) {
-				console.error("Error fetching data:", err);
+				console.log(data);
+			} catch (error) {
+				console.error("Error fetching data:", error);
 				setError("Failed to fetch data.");
 				setLoading(false);
 			}

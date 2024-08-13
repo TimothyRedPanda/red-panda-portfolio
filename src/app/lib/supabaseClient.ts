@@ -6,7 +6,7 @@ const supabaseServiceRoleKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 console.log("Supabase URL:", process.env.NEXT_PUBLIC_SUPABASE_URL);
 console.log(
 	"Service Role Key:",
-	process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? "Available" : "Not Available",
+	supabaseServiceRoleKey ? "Available" : "Not Available",
 );
 
 if (!supabaseUrl || !supabaseServiceRoleKey) {

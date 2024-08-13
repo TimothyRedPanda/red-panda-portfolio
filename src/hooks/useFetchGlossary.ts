@@ -19,8 +19,8 @@ export const useFetchGlossary = () => {
 				const data = await fetchData("javascripttips");
 				setQuestions(data);
 				setLoading(false);
-			} catch (err) {
-				console.error("Error fetching data:", err);
+			} catch (error) {
+				console.error("Error fetching data:", error);
 				setError("Failed to fetch data.");
 				setLoading(false);
 			}

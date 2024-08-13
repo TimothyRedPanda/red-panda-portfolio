@@ -1,6 +1,6 @@
 import Paragraph from "../components/Paragraph/Paragraph";
 import Title from "../components/Title/Title";
-import CharacterTable from "../components/CharacterTable/CharacterTable";
+import CharacterTable from "../components/CharacterCard/CharacterCard";
 
 const Lotr = () => {
 	const aboutTitle: string = "Lord of the Rings API";
