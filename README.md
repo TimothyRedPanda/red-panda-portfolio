@@ -35,14 +35,38 @@ Timothy (Red Panda Studios)
 I am so proud of having implemented a working code editor into the [Code Fun](https://www.red-panda.studio/practice) page of the project. Combining `Monoco React Editor` and `Piston API` for code parsing. I am also using `isomorphic-fetch` to handle my API post requests to `Piston`. Feel free to play around with it and have fun.
 
 ``` typescript
-import axios from "axios";
+import fetch from "isomorphic-fetch";
 
-const API = axios.create({
-	baseURL: "https://emkc.org/api/v2/piston",
-});
+export interface ExecutionResult {
+	run: {
+		output: string;
+		stderr?: string;
+	};
+}
 
-async function executeCode(sourceCode) {
-	const response = await API.post("/execute", {
+const API_URL = "https://emkc.org/api/v2/piston";
+
+const isValidUrl = (urlString: string): boolean => {
+	const urlPattern = new RegExp(
+		// Same regular expression for validating URL
+		"^((https?:\\/\\/)?|(\\d{1,3}\\.){3}\\d{1,3})" + // protocol or IP (v4) address
+			"((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|(\\d{1,3}\\.){3}\\d{1,3})" + // domain name
+			"(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+			"(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+			"(\\#[-a-z\\d_]*)?$",
+		"i", // fragment locator
+	);
+	return !!urlString.match(urlPattern);
+};
+
+const executeCode = async (sourceCode: string): Promise<ExecutionResult> => {
+	const endpoint = "/execute";
+	if (!isValidUrl(API_URL + endpoint)) {
+		throw new Error("Invalid URL");
+	}
+
+	const url = API_URL + endpoint;
+	const body = {
 		language: "js",
 		version: "18.15.0",
 		files: [
@@ -50,9 +74,21 @@ async function executeCode(sourceCode) {
 				content: sourceCode,
 			},
 		],
+	};
+
+	const response = await fetch(url, {
+		method: "POST",
+		headers: { "Content-Type": "application/json" }, // Add Content-Type header
+		body: JSON.stringify(body), // Convert data to JSON string
 	});
-	return response.data;
-}
+
+	if (!response.ok) {
+		throw new Error(`API request failed with status ${response.status}`);
+	}
+
+	const data = await response.json(); // Parse JSON response data
+	return data as ExecutionResult;
+};
 
 export default executeCode;
 
@@ -60,11 +96,11 @@ export default executeCode;
 ```
 To have a look at the error handling and such like please see this locations in the repo -
 
-* `src/app/components/CodeEditor` For the code editor itself logic.
+* `src/app/components/CodeEditor/*` For the code editor itself logic.
 * `src/app/components/Output/Output.tsx` For the the console output logic.
 
 
- Everything should be labelled relatively straight forwardly, but feel free to ask if you have any questions. In `src/app/components/PrismLoader.tsx` is the logic for handling the syntax highlighting. If you were interested:
+ Everything should be labelled relatively straight forwardly, but feel free to ask if you have any questions. In `src/app/components/PrismLoader/PrismLoader.tsx` is the logic for handling the syntax highlighting. If you were interested:
  ``` typescript
 // This is declaring the page as client side - and is needed for useEffect.
 "use client";
