@@ -5,9 +5,9 @@ import PrismLoader from "../PrismLoader/PrismLoader";
 import Link from "next/link";
 
 const buttonCode = `<Button>Default</Button>
-<Button className="outlined">Outlined</Button>
-<Button className="contained">Contained</Button>
-<Button className="disabled">Disabled</Button>`;
+<Button variant="outlined">Outlined</Button>
+<Button variant="contained">Contained</Button>
+<Button variant="disabled">Disabled</Button>`;
 
 const importCode = `npm i ui-redpanda 
 import { UI element name here. } from "ui-redpanda"
@@ -27,9 +27,9 @@ const ExampleUI = () => {
 			<section className="flex items-center gap-1 flex-col border-4 border-slate-300 p-4 shadow-questionShadow w-3/4 rounded-md wrapper">
 				<section className="flex flex-col md:justify-around md:w-full md:flex-row gap-3">
 					<Button>Default</Button>
-					<Button className="outlined">Outlined</Button>
-					<Button className="contained">Contained</Button>
-					<Button className="disabled">Disabled</Button>
+					<Button variant="outlined">Outlined</Button>
+					<Button variant="contained">Contained</Button>
+					<Button variant="disabled">Disabled</Button>
 				</section>
 				<span className="divide-wrap self-center w-full m-8 relative h-[1.5px]">
 					<span className="divider opacity-0 absolute w-px h-full" />
