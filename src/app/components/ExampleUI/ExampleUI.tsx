@@ -10,7 +10,7 @@ const buttonCode = `<Button>Default</Button>
 <Button variant="disabled">Disabled</Button>`;
 
 const importCode = `npm i ui-redpanda 
-import { UI element name here. } from "ui-redpanda"
+import { /* UI component name here */ } from "ui-redpanda"
 import "ui-redpanda/dist/style.css"`;
 
 const ExampleUI = () => {
