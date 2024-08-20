@@ -1,5 +1,5 @@
 "use client";
-import { Button, Label, Switch } from "ui-redpanda";
+import { Button, Label, Switch, Input } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
 import PrismLoader from "../PrismLoader/PrismLoader";
 import Link from "next/link";
@@ -13,7 +13,10 @@ const code = `// Examples of button variants:
 <Label className="justify-self-end" size="large" label="Live switch:"/> 
 <Switch className="justify-self-start" variant="live"/>
 <Label className="justify-self-end" size="large" label="Disabled switch:"/>
-<Switch className="justify-self-start" variant="disabled"/>`;
+<Switch className="justify-self-start" variant="disabled"/>
+<Input className="sm:justify-self-center" type="text" sanitized />
+<Input className="sm:justify-self-center" type="radio" />
+<Input className="sm:justify-self-center" type="checkbox" />`;
 
 const importCode = `npm i ui-redpanda 
 import { /* UI component name here */ } from "ui-redpanda"
@@ -48,6 +51,9 @@ const ExampleUI = () => {
 						label="Disabled switch:"
 					/>
 					<Switch className="sm:justify-self-start" variant="disabled" />
+					<Input className="sm:justify-self-center" type="text" sanitized />
+					<Input className="sm:justify-self-center" type="radio" />
+					<Input className="sm:justify-self-center" type="checkbox" />
 				</section>
 				<span className="divide-wrap self-center w-full m-8 relative h-[1.5px]">
 					<span className="divider opacity-0 absolute w-px h-full" />

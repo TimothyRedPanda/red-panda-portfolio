@@ -1,5 +1,6 @@
 import { z } from "zod";
 import DOMPurify from "dompurify";
+import { Input } from "ui-redpanda";
 
 interface Data {
 	title: string;
@@ -51,11 +52,11 @@ const GlossaryFilter = ({
 					</option>
 				))}
 			</select>
-			<input
-				className="py-2 px-4"
+			<Input
 				type="text"
-				placeholder="Search..."
+				defaultValue="Search..."
 				onChange={handleSelectChange}
+				sanitized
 			/>
 			<p className="h-full items-center flex">
 				{filteredQuestions.length > 0
