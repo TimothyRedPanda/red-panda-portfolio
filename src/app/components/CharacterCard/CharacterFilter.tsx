@@ -1,6 +1,8 @@
 import { z } from "zod";
 import DOMPurify from "dompurify";
 import { capitalizeWords } from "../../../utils/capitalizeWords";
+import { Input } from "ui-redpanda";
+import "ui-redpanda/dist/style.css";
 
 interface Character {
 	firstname: string;
@@ -59,10 +61,9 @@ const CharacterFilter = ({
 					</option>
 				))}
 			</select>
-			<input
-				className="py-2 px-4"
+			<Input
 				type="text"
-				placeholder="Search..."
+				defaultValue="Search..."
 				onChange={handleSelectChange}
 			/>
 			<p className="h-full md:flex items-center hidden">
