@@ -1,4 +1,4 @@
-import { capitalizeWords } from "../../../utils/capitalizeWords";
+import { capitalizeWords } from "../../utils/capitalizeWords";
 
 interface Character {
 	firstname: string;

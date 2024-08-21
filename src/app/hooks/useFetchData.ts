@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchData } from "../app/lib/fetchData";
+import { fetchData } from "../lib/fetchData";
 
 const useFetchData = (endpoint: string) => {
 	const [data, setData] = useState<Array<[]>>([]);

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import DOMPurify from "dompurify";
-import { capitalizeWords } from "../../../utils/capitalizeWords";
+import { capitalizeWords } from "../../utils/capitalizeWords";
 import { Input } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
 

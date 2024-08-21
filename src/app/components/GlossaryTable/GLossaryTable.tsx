@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useFetchGlossary } from "../../../hooks/useFetchGlossary";
+import { useFetchGlossary } from "../../hooks/useFetchGlossary";
 import GlossaryFilter from "./GlossaryFilter";
 import GlossaryList from "./GlossaryList";
 

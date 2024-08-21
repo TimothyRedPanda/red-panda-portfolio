@@ -1,4 +1,4 @@
-import { capitalizeWords } from "../../../utils/capitalizeWords";
+import { capitalizeWords } from "../../utils/capitalizeWords";
 
 interface Data {
 	title: string;
@@ -14,12 +14,8 @@ interface GlossaryRowProps {
 const GlossaryRow = ({ question }: GlossaryRowProps) => {
 	return (
 		<tr>
-			<td className="px-4 py-2">
-				{capitalizeWords(question.title)}
-			</td>
-			<td className="px-4 py-2">
-				{capitalizeWords(question.description)}
-			</td>
+			<td className="px-4 py-2">{capitalizeWords(question.title)}</td>
+			<td className="px-4 py-2">{capitalizeWords(question.description)}</td>
 		</tr>
 	);
 };

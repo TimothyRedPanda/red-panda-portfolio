@@ -1,5 +1,5 @@
 import { useState, useEffect, cache } from "react";
-import { fetchData } from "../../src/app/lib/fetchData";
+import { fetchData } from "../lib/fetchData";
 
 interface Character {
 	firstname: string;
