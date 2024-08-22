@@ -52,8 +52,6 @@ const Response: React.FC<ResponseProps> = ({ memory, memoryRef }) => {
 		if (lastIndex < text.length) {
 			parts.push({ type: "text", content: text.slice(lastIndex) });
 		}
-
-		console.log(parts);
 		return parts;
 	};
 

@@ -4,8 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import Response from "../components/Response/Response";
 import { Button, Input } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
+import { sanitizeCode } from "../utils/sanitizeInput";
 
 const PandaChat = () => {
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const sanitized = sanitizeCode(e.target.value);
+		setInputVal(sanitized);
+	};
 	// The inputVal is storing our users input which we can then send to the API.
 	const [inputVal, setInputVal] = useState("");
 	// This is storing our memory, allowing us a list of the questions and responses.
@@ -21,7 +26,6 @@ const PandaChat = () => {
 		// When the dataset function is called, setLoading is set to true, the API is called, and then setLoading is set to false.
 		setLoading(true);
 		const response = await askQuestion(inputVal);
-		console.log(response);
 		setLoading(false);
 		// If the response is undefined, we set the response to "Apologies, I can't respond right now. Please try again later."
 		const newMemory =
@@ -64,12 +68,7 @@ const PandaChat = () => {
 					</div>
 				)}
 				<section className="flex flex-col items-center md:flex-row gap-5 justify-center w-3/4">
-					<Input
-						type="text"
-						sanitized
-						className="w-full"
-						onChange={(e) => setInputVal(e.target.value)}
-					/>
+					<Input type="text" className="w-full" onChange={handleChange} />
 					<Button onClick={() => dataset()} variant="contained">
 						{loading ? "Thinking" : "Submit"}
 					</Button>
