@@ -14,11 +14,6 @@ interface ResponseProps {
 }
 
 const Response: React.FC<ResponseProps> = ({ memory, memoryRef }) => {
-	const isCodeSnippet = (text: string) => {
-		// Check if the text contains a code snippet
-		return text.includes("```");
-	};
-
 	const extractParts = (text: string) => {
 		// Extract parts of the text, separating code snippets and plain text
 		const parts = [];

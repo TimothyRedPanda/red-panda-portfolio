@@ -4,11 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import Response from "../components/Response/Response";
 import { Button, Input } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
-import { sanitizeCode } from "../utils/sanitizeInput";
+import sanitizedInput from "../utils/sanitizeInput";
 
 const PandaChat = () => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const sanitized = sanitizeCode(e.target.value);
+		const sanitized = sanitizedInput(e.target.value);
 		setInputVal(sanitized);
 	};
 	// The inputVal is storing our users input which we can then send to the API.
