@@ -5,11 +5,7 @@ import "prismjs/themes/prism-tomorrow.css"; // Import the PrismJS theme
 import { useEffect, useRef } from "react";
 import { sanitizeInput } from "../utils/sanitizeInput";
 import { FormatContent } from "../utils/formatText";
-import { unstable_noStore as noStore } from 'next/cache';
-
-
 export default function Chat() {
-	noStore();
 	const { messages, input, handleInputChange, handleSubmit, isLoading } =
 		useChat();
 	const chatContainerRef = useRef<HTMLDivElement>(null);
