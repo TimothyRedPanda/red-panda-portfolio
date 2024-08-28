@@ -14,7 +14,7 @@ const Navbar = () => {
 		{ href: "/practice", text: "Code Fun" },
 		{ href: "/redpandaui", text: "Red Panda UI" },
 		{ href: "/lotr", text: "Lord of the Rings" },
-		{ href: "/red-panda-chat", text: "Panda Chat" },
+		{ href: "/chat", text: "Panda Chat" },
 	];
 
 	const hidden = !open;
