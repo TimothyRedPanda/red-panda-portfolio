@@ -1,19 +1,23 @@
 "use client";
 
 import { useChat } from "ai/react";
-import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css"; // Import the PrismJS theme
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { sanitizeInput } from "../utils/sanitizeInput";
 import { FormatContent } from "../utils/formatText";
 
 export default function Chat() {
 	const { messages, input, handleInputChange, handleSubmit, isLoading } =
 		useChat();
+	const chatContainerRef = useRef<HTMLDivElement>(null);
 
+	// Scroll to the bottom of the chat container when messages change
 	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
-		Prism.highlightAll();
+		if (chatContainerRef.current) {
+			chatContainerRef.current.scrollTop =
+				chatContainerRef.current.scrollHeight;
+		}
 	}, [messages]);
 
 	const sanitized = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +33,10 @@ export default function Chat() {
 
 	return (
 		<main className="w-screen h-screen flex flex-col gap-2 items-center chat text-slate-900">
-			<div className="flex flex-col w-3/4 overflow-y-scroll whitespace-pre-wrap h-3/4 gap-4 p-5">
+			<div
+				ref={chatContainerRef}
+				className="flex flex-col w-3/4 overflow-y-scroll whitespace-pre-wrap h-3/4 gap-4 p-5"
+			>
 				{messages.map((m) => (
 					<div
 						key={m.id}
@@ -40,7 +47,7 @@ export default function Chat() {
 						}`}
 					>
 						{m.role === "user" ? "" : "Panda Chat: "}
-						{FormatContent(m.content)}
+						<FormatContent content={m.content} />
 					</div>
 				))}
 			</div>

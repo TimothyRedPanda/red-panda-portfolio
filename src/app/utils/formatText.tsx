@@ -1,73 +1,43 @@
-export const FormatContent = (content: string) => {
-	let insideCodeBlock = false;
-	let codeBlockLanguage = "";
-	let codeBlockContent = "";
+import ReactMarkdown, { type Components } from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { memo, type ReactNode } from "react";
 
-	return content.split("\n").map((line: string, index: number) => {
-		const uniqueKey = `${line}-${index}`;
-
-		// Check for the start or end of a code block
-		if (line.startsWith("```")) {
-			if (insideCodeBlock) {
-				// End of code block
-				insideCodeBlock = false;
-				const formattedCodeBlock = (
-					<pre key={uniqueKey}>
-						<code className={`language-${codeBlockLanguage}`}>
-							{codeBlockContent}
-						</code>
-					</pre>
-				);
-				codeBlockContent = "";
-				codeBlockLanguage = "";
-				return formattedCodeBlock;
-			}
-			// Start of code block
-			insideCodeBlock = true;
-			codeBlockLanguage = line.replace(/```/g, "").trim();
-			return null; // Don't render the start line
-		}
-
-		if (insideCodeBlock) {
-			// Accumulate code block content
-			codeBlockContent += `${line}\n`;
-			return null; // Don't render code lines immediately
-		}
-
-		if (line.startsWith("##") || line.startsWith("###")) {
-			return (
-				<h2 className="text-orange-300" key={uniqueKey}>
-					{line.replace(/##+/, "").trim()}
-				</h2>
-			);
-		}
-
-		if (line.includes("**")) {
-			const parts = line
-				.split(/(\*\*.*?\*\*)/g)
-				.map((part: string, i: number) => {
-					const partKey = `${part}-${i}`;
-					if (part.startsWith("**") && part.endsWith("**")) {
-						return <strong key={partKey}>{part.replace(/\*\*/g, "")}</strong>;
-					}
-					return part;
-				});
-			return <p key={uniqueKey}>{parts}</p>;
-		}
-
-		if (line.includes("***")) {
-			const parts = line
-				.split(/(\*\*\*.*?\*\*\*)/g)
-				.map((part: string, i: number) => {
-					const partKey = `${part}-${i}`;
-					if (part.startsWith("***") && part.endsWith("***")) {
-						return <em key={partKey}>{part.replace(/\*\*\*/g, "")}</em>;
-					}
-					return part;
-				});
-			return <p key={uniqueKey}>{parts}</p>;
-		}
-
-		return <p key={uniqueKey}>{line}</p>;
-	});
+const components: Components = {
+	// ... other components
+	code: ({
+		inline,
+		className,
+		children,
+		...props
+	}: {
+		inline?: boolean;
+		className?: string;
+		children?: ReactNode;
+	}) => {
+		const match = /language-(\w+)/.exec(className || "");
+		return !inline && match ? (
+			<SyntaxHighlighter
+				style={dark}
+				language={match[1]}
+				PreTag="div"
+				{...props}
+			>
+				{String(children).replace(/\n$/, "")}
+			</SyntaxHighlighter>
+		) : (
+			<code className={className} {...props}>
+				{children}
+			</code>
+		);
+	},
 };
+
+export const FormatContent = memo(({ content }: { content: string }) => {
+	return (
+		<ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+			{content}
+		</ReactMarkdown>
+	);
+});
