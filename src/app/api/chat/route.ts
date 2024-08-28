@@ -1,6 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import { streamText, convertToCoreMessages } from "ai";
 import { content } from "./content";
+export const dynamic = 'force-dynamic';
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
