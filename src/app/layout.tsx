@@ -17,7 +17,7 @@ const RootLayout = ({
 		<html lang="en">
 			<body className="h-dvh w-dvw grid gap-0 overflow-hidden text-slate-900 bg-slate-100">
 				<Navbar />
-				<main className="overflow-x-hidden overflow-y-scroll pb-10">
+				<main className="overflow-hidden pb-10">
 					{children}
 					<FrogFriend />
 				</main>

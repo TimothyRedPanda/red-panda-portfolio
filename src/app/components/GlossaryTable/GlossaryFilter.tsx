@@ -41,7 +41,7 @@ const GlossaryFilter = ({
 	};
 
 	return (
-		<span className="w-full md:flex flex-row gap-2 hidden">
+		<span className="w-full lg:flex flex-row gap-2 hidden">
 			<select className="py-2 px-4" onChange={handleSelectChange}>
 				<option value="" className="py-2 px-4">
 					All

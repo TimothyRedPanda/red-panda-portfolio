@@ -24,7 +24,7 @@ const GlossaryTable = () => {
 	}
 
 	return (
-		<main className="w-[75vw] p-4 md:p-10">
+		<main className="w-dvw h-dvh p-2 md:p-5">
 			<GlossaryFilter
 				setFilter={setFilter}
 				questions={questions}

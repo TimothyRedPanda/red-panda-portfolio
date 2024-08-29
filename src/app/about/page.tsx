@@ -1,7 +1,6 @@
 import Paragraph from "../components/Paragraph/Paragraph";
 import Link from "next/link";
 import Title from "../components/Title/Title";
-import GlossaryTable from "../components/GlossaryTable/GLossaryTable";
 
 const About = () => {
 	const aboutTitle: string = "About Red Panda Studio";
@@ -16,7 +15,7 @@ const About = () => {
 		"head over to ";
 
 	return (
-		<main className="p-6 w-full items-center gap-2 flex flex-col">
+		<main className="p-6 w-full min-h-screen items-center gap-2 flex flex-col">
 			<Title text={aboutTitle} />
 			<Paragraph>
 				{paraText}
@@ -25,8 +24,6 @@ const About = () => {
 					contact.
 				</Link>
 			</Paragraph>
-			<h2 className="p-5 underline font-bold">Glossary of terms</h2>
-			<GlossaryTable />
 		</main>
 	);
 };

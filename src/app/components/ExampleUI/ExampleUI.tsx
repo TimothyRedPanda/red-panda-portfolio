@@ -30,7 +30,7 @@ const ExampleUI = () => {
 					Red Panda UI
 				</h1>
 			</Link>
-			<section className="flex flex-col border-slate-300 p-4 shadow-questionShadow w-3/4 rounded-md wrapper">
+			<section className="flex flex-col border-slate-300 p-4 w-3/4 rounded-md wrapper">
 				<section className="grid grid-cols-1 md:grid-cols-4 gap-5 items-center justify-items-center w-full h-fit p-4">
 					<Button>Default</Button>
 					<Button variant="outlined">Outlined</Button>

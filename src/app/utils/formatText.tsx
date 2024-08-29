@@ -5,7 +5,6 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { memo, type ReactNode } from "react";
 
 const components: Components = {
-	// ... other components
 	code: ({
 		inline,
 		className,
