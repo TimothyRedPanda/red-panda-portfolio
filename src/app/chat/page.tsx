@@ -64,7 +64,7 @@ export default function Chat() {
 					placeholder={`${
 						isLoading
 							? "Just having a think..."
-							: "Ask me anything about coding!"
+							: "Introduce yourself to start your learning journey!"
 					}`}
 					onChange={sanitized}
 				/>
