@@ -54,7 +54,7 @@ const Home = () => {
 	}
 
 	return (
-		<main className="p-3 gap-6 flex flex-col overflow-y-scroll min-h-screen scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-amber-400 scrollbar-track-transparent">
+		<main className="p-3 gap-6 flex flex-col overflow-y-scroll h-screen min-h-screen scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-amber-400 scrollbar-track-transparent">
 			<span className="hidden md:inline logo place-self-center scale-75 md:scale-100">
 				<RedPandaStudio />
 			</span>

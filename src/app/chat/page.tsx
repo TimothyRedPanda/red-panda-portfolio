@@ -52,14 +52,18 @@ export default function Chat() {
 
 			<form
 				onSubmit={handleSubmit}
-				className="w-full p-4 flex flex-col items-center"
+				className={`w-fit py-2 pl-2 pr-4 flex flex-row gap-2 justify-center items-center ${
+					isLoading
+						? "opacity-50 pointer-events-none cursor-not-allowed"
+						: "opacity-100"
+				} bg-slate-900 text-slate-50 transition-all duration-1000 border-gray-300 rounded-full shadow-xl`}
 			>
 				<input
 					className={`${
 						isLoading
 							? "opacity-50 pointer-events-none cursor-not-allowed"
 							: "opacity-100"
-					} bg-slate-900 text-slate-50 transition-all flex flex-col justify-center items-center duration-1000 w-full max-w-[35em] border border-gray-300 p-4 rounded shadow-xl`}
+					} bg-slate-900 rounded-l-full text-slate-50 outline-amber-400 transition-all flex flex-col justify-center border-none items-center duration-1000 w-[80vw] max-w-[35em] border  p-4 `}
 					value={input}
 					placeholder={`${
 						isLoading
@@ -68,6 +72,9 @@ export default function Chat() {
 					}`}
 					onChange={sanitized}
 				/>
+				<button type="submit" className="text-2xl">
+					{isLoading ? "❌" : "✔️"}
+				</button>
 			</form>
 		</main>
 	);
