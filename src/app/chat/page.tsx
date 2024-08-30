@@ -4,6 +4,7 @@ import { useChat } from "ai/react";
 import { useEffect, useRef } from "react";
 import { sanitizeInput } from "../utils/sanitizeInput";
 import { FormatContent } from "../utils/formatText";
+
 export default function Chat() {
 	const { messages, input, handleInputChange, handleSubmit, isLoading } =
 		useChat();
@@ -30,7 +31,7 @@ export default function Chat() {
 	};
 
 	return (
-		<main className="w-screen h-screen min-h-screen items-center  flex flex-col gap-2 chat text-slate-50 bg-slate-800 overflow-hidden">
+		<main className="w-screen h-screen min-h-screen items-center flex flex-col gap-2 chat bg-slate-800 overflow-hidden">
 			<div
 				ref={chatContainerRef}
 				className="flex flex-col md:w-3/4 h-[80%] overflow-y-scroll whitespace-pre-wrap gap-4 p-5 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-amber-400 scrollbar-track-transparent"
@@ -40,11 +41,10 @@ export default function Chat() {
 						key={m.id}
 						className={`p-4 ${
 							m.role === "user"
-								? "self-end w-fit bg-slate-800 text-slate-50 rounded-md"
-								: "self-start bg-slate-900 text-slate-50 w-full"
+								? "self-end w-fit bg-slate-900 rounded-md"
+								: "self-start w-full bg-slate-800"
 						}`}
 					>
-						{m.role === "user" ? "" : "Panda Chat: "}
 						<FormatContent content={m.content} />
 					</div>
 				))}
@@ -63,12 +63,10 @@ export default function Chat() {
 						isLoading
 							? "opacity-50 pointer-events-none cursor-not-allowed"
 							: "opacity-100"
-					} bg-slate-900 rounded-l-full text-slate-50 outline-amber-400 transition-all flex flex-col justify-center border-none items-center duration-1000 w-[80vw] max-w-[35em] border  p-4 `}
+					} bg-slate-900 rounded-l-full text-slate-50 outline-amber-400 transition-all flex flex-col justify-center border-none items-center duration-1000 w-[80vw] max-w-[35em] border p-4`}
 					value={input}
 					placeholder={`${
-						isLoading
-							? "Just having a think..."
-							: "Introduce yourself or follow the prompts!"
+						isLoading ? "Just having a think..." : "Hiya, introduce yourself!"
 					}`}
 					onChange={sanitized}
 				/>
