@@ -31,7 +31,7 @@ export default function Chat() {
 	};
 
 	return (
-		<main className="w-screen h-screen min-h-screen items-center flex flex-col gap-2 chat bg-slate-800 overflow-hidden">
+		<main className="w-screen h-screen min-h-screen items-center flex flex-col gap-2 chat bg-slate-60 overflow-hidden">
 			<div
 				ref={chatContainerRef}
 				className="flex flex-col md:w-3/4 h-[80%] overflow-y-scroll whitespace-pre-wrap gap-4 p-5 scrollbar-thin scrollbar-thumb-rounded scrollbar-thumb-amber-400 scrollbar-track-transparent"
@@ -66,7 +66,11 @@ export default function Chat() {
 					} bg-slate-900 rounded-l-full text-slate-50 outline-amber-400 transition-all flex flex-col justify-center border-none items-center duration-1000 w-[80vw] max-w-[35em] border p-4`}
 					value={input}
 					placeholder={`${
-						isLoading ? "Just having a think..." : "Hiya, introduce yourself!"
+						isLoading
+							? "Just having a think..."
+							: messages.length === 0
+								? "Hiya, introduce yourself!"
+								: "Your replies go here..."
 					}`}
 					onChange={sanitized}
 				/>

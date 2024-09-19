@@ -41,7 +41,7 @@ const Navbar = () => {
 
 	return (
 		<nav className="flex justify-between items-center p-3 bg-transparent absolute font-bold">
-			<Button variant="contained" size="small" onClick={() => setOpen(true)}>
+			<Button size="small" onClick={() => setOpen(true)}>
 				Menu
 			</Button>
 			<Modal isOpen={open} onClose={() => setOpen(false)}>
