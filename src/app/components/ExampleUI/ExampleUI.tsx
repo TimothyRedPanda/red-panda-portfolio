@@ -1,5 +1,5 @@
 "use client";
-import { Button, Label, Switch, Input } from "ui-redpanda";
+import { Button, Label, Switch, Input, Textbox } from "ui-redpanda";
 import "ui-redpanda/dist/style.css";
 import PrismLoader from "../PrismLoader/PrismLoader";
 import Link from "next/link";
@@ -20,7 +20,9 @@ import "ui-redpanda/dist/style.css"
 // Examples of input types:
 <Input className="sm:justify-self-center" type="text" sanitized />
 <Input className="sm:justify-self-center" type="radio" />
-<Input className="sm:justify-self-center" type="checkbox" />`;
+<Input className="sm:justify-self-center" type="checkbox" />
+// Textbox example:
+<Textbox name="Textbox" placeholder="Type here..." sanitized/>`;
 
 const ExampleUI = () => {
 	return (
@@ -55,6 +57,12 @@ const ExampleUI = () => {
 					<Input className="sm:justify-self-center" type="text" sanitized />
 					<Input className="sm:justify-self-center" type="radio" />
 					<Input className="sm:justify-self-center" type="checkbox" />
+				</section>
+				<span className="divide-wrap self-center w-full m-8 relative h-[1.5px]">
+					<span className="divider opacity-0 absolute w-px h-full" />
+				</span>
+				<section className="grid grid-cols-1 md:grid-cols-3 gap-5 items-center justify-items-center w-full h-fit p-4">
+					<Textbox name="Textbox" placeholder="Type here..." sanitized />
 				</section>
 				<span className="divide-wrap self-center w-full m-8 relative h-[1.5px]">
 					<span className="divider opacity-0 absolute w-px h-full" />
