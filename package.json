@@ -13,7 +13,7 @@
     "@ai-sdk/openai": "^0.0.58",
     "@monaco-editor/react": "^4.6.0",
     "@supabase/supabase-js": "^2.45.3",
-    "ai": "^3.3.29",
+    "ai": "^3.3.31",
     "dompurify": "^3.1.6",
     "dotenv": "^16.4.5",
     "isomorphic-fetch": "^3.0.0",
