@@ -10,10 +10,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^0.0.60",
+    "@ai-sdk/openai": "^1.0.8",
     "@monaco-editor/react": "^4.6.0",
     "@supabase/supabase-js": "^2.45.4",
-    "ai": "^3.3.29",
+    "ai": "^4.0.22",
     "dompurify": "^3.1.7",
     "dotenv": "^16.4.5",
     "isomorphic-fetch": "^3.0.0",
@@ -22,9 +22,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^15.6.1",
     "remark-gfm": "^4.0.0",
-    "sass": "^1.79.1",
+    "sass": "^1.83.0",
     "tailwindcss-animated": "^1.1.2",
     "ui-redpanda": "^0.2.9",
     "zod": "^3.23.8"
