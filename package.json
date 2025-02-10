@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^1.0.18",
+    "@ai-sdk/openai": "^1.1.0",
     "@monaco-editor/react": "^4.6.0",
     "@supabase/supabase-js": "^2.47.16",
     "ai": "^4.0.33",
