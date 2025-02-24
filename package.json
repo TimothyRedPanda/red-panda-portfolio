@@ -12,8 +12,8 @@
   "dependencies": {
     "@ai-sdk/openai": "^1.1.0",
     "@monaco-editor/react": "^4.6.0",
-    "@supabase/supabase-js": "^2.47.16",
-    "ai": "^4.1.16",
+    "@supabase/supabase-js": "^2.48.1",
+    "ai": "^4.0.33",
     "dompurify": "^3.2.4",
     "dotenv": "^16.4.7",
     "isomorphic-fetch": "^3.0.0",
