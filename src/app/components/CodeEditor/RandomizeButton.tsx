@@ -1,5 +1,5 @@
 import { Button } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
+import "ui-redpanda/dist/ui-redpanda.css";
 
 interface RandomizeButtonProps {
 	onClick: () => void;

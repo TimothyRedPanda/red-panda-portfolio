@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Button } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
+import "ui-redpanda/dist/ui-redpanda.css";
 
 interface ModalProps {
 	isOpen: boolean;

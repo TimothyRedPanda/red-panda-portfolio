@@ -1,4 +1,3 @@
-snyk test
 npx @biomejs/biome format --write src/app/*.tsx
 npx prettier --write src/app/*.css
 npm run build

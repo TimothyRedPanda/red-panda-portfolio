@@ -1,12 +1,14 @@
 "use client";
-import { Button, Label, Switch, Input, Textbox } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
+import { Button, Label, Switch, Input, Textbox, Loader } from "ui-redpanda";
+import "ui-redpanda/dist/ui-redpanda.css";
 import PrismLoader from "../PrismLoader/PrismLoader";
 import Link from "next/link";
 
 const code = `npm i ui-redpanda@latest 
 import { /* UI component name here */ } from "ui-redpanda"
-import "ui-redpanda/dist/style.css"
+import "ui-redpanda/dist/ui-redpanda.css"
+// Loader
+<Loader />
 // Examples of button variants:
 <Button>Default</Button>
 <Button variant="outlined">Outlined</Button>
@@ -34,6 +36,7 @@ const ExampleUI = () => {
 			</Link>
 			<section className="flex flex-col border-slate-300 p-4 w-3/4 rounded-md wrapper">
 				<section className="grid grid-cols-1 md:grid-cols-4 gap-5 items-center justify-items-center w-full h-fit p-4">
+					<Loader />
 					<Button>Default</Button>
 					<Button variant="outlined">Outlined</Button>
 					<Button variant="contained">Contained</Button>

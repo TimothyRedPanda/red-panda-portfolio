@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Modal from "./Modal";
 import { Button } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
+import "ui-redpanda/dist/ui-redpanda.css";
 
 const Navbar = () => {
 	const [open, setOpen] = useState(false);

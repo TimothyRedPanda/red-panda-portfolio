@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../../lib/fetchData"; // Adjust the import path as needed
 import PrismLoader from "../PrismLoader/PrismLoader";
 import { Button } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
+import "ui-redpanda/dist/ui-redpanda.css";
 
 interface QuestionsProps {
 	numb: number;

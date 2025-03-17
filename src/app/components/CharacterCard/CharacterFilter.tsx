@@ -2,7 +2,7 @@ import { z } from "zod";
 import DOMPurify from "dompurify";
 import { capitalizeWords } from "../../utils/capitalizeWords";
 import { Input } from "ui-redpanda";
-import "ui-redpanda/dist/style.css";
+import "ui-redpanda/dist/ui-redpanda.css";
 
 interface Character {
 	firstname: string;
