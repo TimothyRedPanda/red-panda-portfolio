@@ -14,7 +14,7 @@
     "@monaco-editor/react": "^4.7.0",
     "@supabase/supabase-js": "^2.48.1",
     "ai": "^4.3.16",
-    "dompurify": "^3.2.5",
+    "dompurify": "^3.2.6",
     "dotenv": "^16.5.0",
     "isomorphic-fetch": "^3.0.0",
     "next": "^14.2.28",
